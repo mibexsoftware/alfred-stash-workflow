@@ -76,11 +76,13 @@ class TestStashRepos(TestCase):
         workflow.add_item.assert_called_once_with('No matching repositories found.', icon=ANY)
         self.assertTrue(workflow.send_feedback.called)
 
+    @patch('src.lib.workflow.background')
     @patch('src.lib.workflow.Workflow')
-    def test_get_repositories_from_stash_should_yield_refresh_message(self, workflow):
+    def test_get_repositories_from_stash_should_yield_refresh_message(self, workflow, background):
         # GIVEN
         type(workflow).update_available = PropertyMock(return_value=False)
         workflow.cached_data_fresh.return_value = False
+        background.is_running.return_value = True
 
         # WHEN
         main(workflow)
