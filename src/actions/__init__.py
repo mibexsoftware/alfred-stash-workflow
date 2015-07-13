@@ -66,7 +66,7 @@ def notify_if_upgrade_available(wf):
                     icon=ICON_SYNC)
 
 
-def _notify_if_cache_update_in_progess(wf):
+def _notify_if_cache_update_in_progress(wf):
     # Notify the user if the cache is being updated
     if is_running('update'):
         wf.add_item('Getting data from Stash. Please try again in a second or two...',
@@ -120,7 +120,7 @@ class StashFilteredWorkflow(object):
 
         notify_if_upgrade_available(self.wf)
         entities = _get_data_from_cache(self.wf, self.cache_key)
-        _notify_if_cache_update_in_progess(self.wf)
+        _notify_if_cache_update_in_progress(self.wf)
         query = self.args.get('<query>')
 
         if query and entities:  # query may not be empty or contain only whitespace. This will raise a ValueError.

@@ -76,11 +76,13 @@ class TestStashProjects(TestCase):
         workflow.add_item.assert_called_once_with('No matching projects found.', icon=ANY)
         self.assertTrue(workflow.send_feedback.called)
 
+    @patch('src.lib.workflow.background.is_running')
     @patch('src.lib.workflow.Workflow')
-    def test_get_projects_from_stash_should_yield_refresh_message(self, workflow):
+    def test_get_projects_from_stash_should_yield_refresh_message(self, workflow, is_running):
         # GIVEN
         type(workflow).update_available = PropertyMock(return_value=False)
         workflow.cached_data_fresh.return_value = False
+        is_running.return_value = False
 
         # WHEN
         main(workflow)
