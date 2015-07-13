@@ -1,0 +1,13 @@
+*~
+.idea
+*.pyc
+*.iml
+*.coverage
+.DS_Store
+venv
+Alfred_Workflow*.egg-info
+bootstrap.py
+coverage.xml
+paver-minilib.zip
+tests.xml
+.coverage
