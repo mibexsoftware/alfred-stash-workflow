@@ -71,7 +71,8 @@ class TestStashPullRequests(TestCase):
                                                   subtitle='Super important new feature',
                                                   valid=True,
                                                   icon=ANY,
-                                                  arg='http://localhost:7990/stash/projects/PROJECT_1/repos/rep_1/pull-requests/1')
+                                                  arg='http://localhost:7990/stash/projects/'
+                                                      'PROJECT_1/repos/rep_1/pull-requests/1')
         self.assertTrue(workflow.send_feedback.called)
 
     @patch('src.lib.workflow.Workflow')

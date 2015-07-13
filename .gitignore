@@ -5,6 +5,7 @@
 *.coverage
 .DS_Store
 venv
+setup.py
 Alfred_Workflow*.egg-info
 bootstrap.py
 coverage.xml

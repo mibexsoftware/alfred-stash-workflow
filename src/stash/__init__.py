@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+
 class EqualityMixin(object):
     def __eq__(self, other):
         return (isinstance(other, self.__class__)
