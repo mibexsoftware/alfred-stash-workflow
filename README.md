@@ -78,5 +78,5 @@ This workflow, excluding the Atlassian Stash logo, is released under the [MIT Li
 [mit]: http://opensource.org/licenses/MIT
 [alfred-workflow]: hhttps://github.com/deanishe
 [gh-releases]: https://github.com/mibexsoftware/alfred-stash-workflow/releases
-[packal-page]: http://www.packal.org/workflow/atlassian_stash
+[packal-page]: http://www.packal.org/workflow/atlassian-stash-workflow
 [screencast]: https://raw.githubusercontent.com/mibexsoftware/alfred-stash-workflow/master/screencast.gif
