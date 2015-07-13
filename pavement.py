@@ -17,7 +17,7 @@ options(
         license="MIT"
     ),
     virtualenv=Bunch(
-        packages_to_install=['httpretty', 'wheel', 'virtualenv', 'flake8', 'nosexcover', 'nose', 'mock'],
+        packages_to_install=['httpretty', 'wheel', 'virtualenv', 'flake8', 'nose', 'mock', 'coveralls'],
         script_name='bootstrap.py',
         dest_dir='venv'
     )
@@ -72,4 +72,4 @@ def test():
 @virtualenv(dir="venv")
 def coverage():
     """Runs all tests under the test/ folder structure with code coverage."""
-    sh("nosetests -d  -v --with-xunit --xunit-file=tests.xml --with-xcoverage --cover-package=src test")
+    sh("nosetests -d  -v --with-coverage --cover-package=src test")

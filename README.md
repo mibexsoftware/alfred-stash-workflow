@@ -1,7 +1,7 @@
 # Alfred Workflow for Atlassian Stash #
 
 [![Build Status](http://img.shields.io/travis/mibexsoftware/alfred-stash-workflow.svg?style=flat-square)](https://travis-ci.org/mibexsoftware/alfred-stash-workflow)
-[![Coverage Status](http://img.shields.io/coveralls/mibexsoftware/alfred-stash-workflow/master.svg?style=flat-square)](https://coveralls.io/r/mibexsoftware/alfred-stash-workflow)
+[![Coverage Status](https://coveralls.io/repos/mibexsoftware/alfred-stash-workflow/badge.svg?branch=master&service=github)](https://coveralls.io/github/mibexsoftware/alfred-stash-workflow?branch=master)
 [![Latest Version](http://img.shields.io/github/release/mibexsoftware/alfred-stash-workflow.svg?style=flat-square)](https://github.com/mibexsoftware/alfred-stash-workflow/releases)
 [![License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](http://mibexsoftware.mit-license.org/2015)
 
