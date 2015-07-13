@@ -73,3 +73,10 @@ def test():
 def coverage():
     """Runs all tests under the test/ folder structure with code coverage."""
     sh("nosetests -d  -v --with-coverage --cover-package=src test")
+
+
+@task
+@virtualenv(dir="venv")
+def report_to_coveralls():
+    """Report coverage to coveralls.io."""
+    sh("coveralls")
