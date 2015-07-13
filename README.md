@@ -54,7 +54,7 @@ After a repository name you might sometimes see the following icons:
 | Icon |                    Description                    |
 |------|---------------------------------------------------|
 |  ⑂   | Repository is a fork                              |
-|  ?   | Public repository                                 |
+|  🔓   | Public repository                                 |
 
 
 ## Credits ##
