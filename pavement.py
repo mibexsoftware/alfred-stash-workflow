@@ -57,7 +57,7 @@ def ci():
 @task
 def clean():
     """Clean up the build artifacts, test results, etc."""
-    return max([sh('rm -rf venv ./*.zip bootstrap.py ./*.egg* build .coverage coverage.xml tests.xml setup.py test.xml'),
+    return max([sh('rm -rf ./*.zip bootstrap.py ./*.egg* build .coverage coverage.xml tests.xml setup.py test.xml'),
                 sh('find . -name "*.pyc" -delete')])
 
 
