@@ -32,10 +32,10 @@ Get this Stash workflow for Alfred from [GitHub][gh-releases] or [Packal][packal
 
 You have to configure the parameters for connecting to your Stash instance. Use the following commands:
 
-- `stash config sethost [host_url]` — Configure the URL to your Stash host
-- `stash config setuser [user_name]` — Configure the name of your Stash user
-- `stash config setpassword [password]` — Configure the password of your Stash user (will be stored encrypted in Keychain)
-- `stash config setverify [true|false]` — Enable/disable certificate verification for your connection to Stash (if you use a self-signed certificate, you might want to disable this)
+- `stash config host [host_url]` — Configure the URL to your Stash host
+- `stash config user [user_name]` — Configure the name of your Stash user
+- `stash config password [password]` — Configure the password of your Stash user (will be stored encrypted in Keychain)
+- `stash config verifycert [true|false]` — Enable/disable certificate verification for your connection to Stash (if you use a self-signed certificate, you might want to disable this)
 
 If you want to verify if your connection parameters are valid, use the following command:
 
