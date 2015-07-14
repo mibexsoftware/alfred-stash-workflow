@@ -6,7 +6,7 @@ from paver.virtual import virtualenv
 import os
 
 PROJECT_DIR = os.path.dirname(os.path.realpath(__file__))
-WORKFLOW_DIR = '~/Dropbox/configs/Alfred/Alfred.alfredpreferences'
+WORKFLOW_DIR = '~/Dropbox/configs/Alfred/Alfred.alfredpreferences/workflows'
 BUNDLE_ID = 'ch.mibex.stash.alfred-workflow'
 
 install_distutils_tasks()
