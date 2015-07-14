@@ -97,4 +97,3 @@ def link():
 def unlink():
     """Unlink from Alfred's Dropbox workflow directory."""
     return sh('rm {}/{}'.format(WORKFLOW_DIR, BUNDLE_ID))
-
