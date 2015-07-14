@@ -3,6 +3,11 @@
 from paver.easy import options, task, needs, sh, Bunch
 from paver.setuputils import install_distutils_tasks
 from paver.virtual import virtualenv
+import os
+
+PROJECT_DIR = os.path.dirname(os.path.realpath(__file__))
+WORKFLOW_DIR = '~/Dropbox/configs/Alfred/Alfred.alfredpreferences'
+BUNDLE_ID = 'ch.mibex.stash.alfred-workflow'
 
 install_distutils_tasks()
 
@@ -80,3 +85,16 @@ def coverage():
 def report_to_coveralls():
     """Report coverage to coveralls.io."""
     sh("coveralls")
+
+
+@task
+def link():
+    """Links the workflow directory to Alfred's Dropbox workflow directory."""
+    return sh('ln -s {} {}/{}'.format(PROJECT_DIR, WORKFLOW_DIR, BUNDLE_ID))
+
+
+@task
+def unlink():
+    """Unlink from Alfred's Dropbox workflow directory."""
+    return sh('rm {}/{}'.format(WORKFLOW_DIR, BUNDLE_ID))
+
