@@ -14,7 +14,7 @@ Alfred workflow to search for projects, repositories and pull requests to review
 
 ## Download ##
 
-Get this Stash workflow for Alfred from [GitHub][gh-releases] or [Packal][packal-page].
+Get this Stash workflow for Alfred from [GitHub][gh-releases] or [Packal][packal-page]. See this [guide][alfred-workflow-installation] on how to install a workflow in Alfred (basically, you just have to open the file by double-clicking on it).
 
 
 ## Usage ##
@@ -46,7 +46,6 @@ Further configuration commands:
 - `stash config delcache` — Deletes the cached Stash infos
 
 
-
 ## Icons ##
 
 After a repository name you might sometimes see the following icons:
@@ -59,7 +58,7 @@ After a repository name you might sometimes see the following icons:
 
 ## Credits ##
 
-Thanks to [Dean Jackson][deanishe] for building the fabelous Python library [Alfred Workflow][alfred-workflow].
+Thanks to [Dean Jackson][deanishe] for building the awesome Python library [Alfred Workflow][alfred-workflow].
 
 
 ## License ##
@@ -80,3 +79,4 @@ This workflow, excluding the Atlassian Stash logo, is released under the [MIT Li
 [gh-releases]: https://github.com/mibexsoftware/alfred-stash-workflow/releases
 [packal-page]: http://www.packal.org/workflow/atlassian-stash-workflow
 [screencast]: https://raw.githubusercontent.com/mibexsoftware/alfred-stash-workflow/master/screencast.gif
+[alfred-workflow-installation]: http://support.alfredapp.com/workflows:installing/
