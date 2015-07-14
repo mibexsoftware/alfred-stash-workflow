@@ -182,7 +182,7 @@
 				<key>runningsubtext</key>
 				<string>Getting projects from Stash...</string>
 				<key>script</key>
-				<string>python -msrc.actions.stash_projects "{query}" | tee ~/Desktop/alfred-stash-workflow.log
+				<string>python -msrc.actions.stash_projects "{query}"
 
 # In case you are experiencing unsolveable issues,
 # you can generate a log file to help me. Modify the
@@ -519,7 +519,7 @@
 				<key>runningsubtext</key>
 				<string>Getting open pull requests from Stash...</string>
 				<key>script</key>
-				<string>python -msrc.actions.stash_pull_requests "{query}" | tee ~/Desktop/alfred-stash-workflow.log
+				<string>python -msrc.actions.stash_pull_requests "{query}"
 
 # In case you are experiencing unsolveable issues,
 # you can generate a log file to help me. Modify the
@@ -578,7 +578,7 @@
 				<key>runningsubtext</key>
 				<string>Getting repositories from Stash...</string>
 				<key>script</key>
-				<string>python -msrc.actions.stash_repos "{query}" | tee ~/Desktop/alfred-stash-workflow.log
+				<string>python -msrc.actions.stash_repos "{query}"
 
 # In case you are experiencing unsolveable issues,
 # you can generate a log file to help me. Modify the
@@ -705,7 +705,7 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>script</key>
-				<string>python -msrc.actions.stash_config --check | tee ~/Desktop/alfred-stash-workflow.log
+				<string>python -msrc.actions.stash_config --check
 
 # In case you are experiencing unsolveable issues,
 # you can generate a log file to help me. Modify the
@@ -729,7 +729,15 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string># Alfred Workflow for Atlassian Stash
+
+Search for repositories, projects and pull requests to review.
+
+GitHub: https://github.com/mibexsoftware/alfred-stash-workflow
+
+This workflow, excluding the Atlassian Stash logo, is released under the MIT Licence.
+
+Thanks to Dean Jackson for building the awesome Python library Alfred Workflow.</string>
 	<key>uidata</key>
 	<dict>
 		<key>01F476E8-04DE-4E32-9DCA-F79DB9962946</key>
