@@ -97,7 +97,7 @@ def create_workflow():
                   update_settings={
                       'github_slug': 'mibexsoftware/alfred-stash-workflow',
                       # Optional number of days between checks for updates
-                      'frequency': 7
+                      'frequency': 1
                   })
     return wf
 
