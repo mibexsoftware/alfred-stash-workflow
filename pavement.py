@@ -14,7 +14,7 @@ install_distutils_tasks()
 options(
     setup=dict(
         name="Alfred-Stash-Workflow",
-        packages=['src'],
+        packages=['workflow'],
         version="1.0.0",
         url="https://mibexsoftware.com",
         author="Mibex Software GmbH",
