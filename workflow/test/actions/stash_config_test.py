@@ -9,6 +9,7 @@ from src.lib.workflow import Workflow
 from src.actions.stash_config import main
 from src.lib import requests
 
+
 class TestStashConfig(TestCase):
     def tearDown(self):
         # clear caches
