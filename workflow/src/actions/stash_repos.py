@@ -19,8 +19,7 @@ from __future__ import print_function, unicode_literals
 
 import sys
 
-from src.actions import PROJECT_AVATAR_DIR, \
-    create_workflow, StashFilteredWorkflow, REPOS_CACHE_KEY
+from src.actions import PROJECT_AVATAR_DIR, create_workflow, StashFilteredWorkflow, REPOS_CACHE_KEY
 
 # Icons shown in Alfred results
 FORK = '⑂'

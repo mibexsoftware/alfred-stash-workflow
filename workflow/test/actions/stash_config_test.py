@@ -4,11 +4,10 @@ from unittest import TestCase
 
 from mock import PropertyMock, patch, ANY
 from src.actions import HOST_URL, USER_NAME, USER_PW, VERIFY_CERT
-from src.lib import requests
 from src.lib.requests.exceptions import SSLError
 from src.lib.workflow import Workflow
 from src.actions.stash_config import main
-
+from src.lib import requests
 
 class TestStashConfig(TestCase):
     def tearDown(self):

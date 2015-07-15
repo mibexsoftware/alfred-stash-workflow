@@ -1,10 +1,12 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 import shutil
+import os
 
 from src.actions import PROJECT_AVATAR_DIR, UPDATE_INTERVAL, build_stash_facade, REPOS_CACHE_KEY, PROJECTS_CACHE_KEY, \
     PULL_REQUESTS_CACHE_KEY
 from src.lib.workflow import Workflow
-import os
 
 log = None
 

@@ -1,9 +1,9 @@
 [run]
 omit =
-       test/*
+       workflow/test/*
        pavement.py
        *__init__.py
-       src/lib/*
+       workflow/src/lib/*
        */python?.?/*
        */lib-python/?.?/*.py
        */lib_pypy/_*.py

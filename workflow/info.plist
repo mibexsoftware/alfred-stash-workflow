@@ -731,6 +731,8 @@
 	<key>readme</key>
 	<string># Alfred Workflow for Atlassian Stash
 
+Version: 1.0.2
+
 Search for repositories, projects and pull requests to review.
 
 GitHub: https://github.com/mibexsoftware/alfred-stash-workflow

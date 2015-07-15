@@ -5,7 +5,7 @@ from paver.setuputils import install_distutils_tasks
 from paver.virtual import virtualenv
 import os
 
-PROJECT_DIR = os.path.dirname(os.path.realpath(__file__))
+PROJECT_DIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'workflow')
 WORKFLOW_DIR = '~/Dropbox/configs/Alfred/Alfred.alfredpreferences/workflows'
 BUNDLE_ID = 'ch.mibex.stash.alfred-workflow'
 
@@ -48,7 +48,7 @@ def build():
 @virtualenv(dir="venv")
 def lint():
     """Lint Python files"""
-    return sh('flake8 test src/actions src/stash pavement.py')
+    return sh('flake8 workflow/test workflow/src/actions workflow/src/stash pavement.py')
 
 
 @task
@@ -70,14 +70,23 @@ def clean():
 @virtualenv(dir="venv")
 def test():
     """Runs all tests under the test/ folder structure."""
-    sh("nosetests -d -v test")
+    sh("nosetests -d -v workflow/test")
 
 
 @task
 @virtualenv(dir="venv")
 def coverage():
     """Runs all tests under the test/ folder structure with code coverage."""
-    sh("nosetests -d  -v --with-coverage --cover-package=src test")
+    sh("nosetests -d  -v --with-coverage --cover-package=workflow/src workflow/test")
+
+
+@task
+@virtualenv(dir="venv")
+def install_libs():
+    """Install shipped workflow libs."""
+    sh("pip install --target=workflow/src/lib requests==2.7.0")
+    sh("pip install --target=workflow/src/lib docopt==0.6.2")  # not available with Python 2.6
+    sh("pip install --target=workflow/src/lib Alfred-Workflow==1.12")
 
 
 @task
