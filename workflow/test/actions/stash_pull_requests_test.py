@@ -5,7 +5,7 @@ from unittest import TestCase, skip
 from mock import patch, PropertyMock, ANY, call
 from src.stash import PullRequest
 from src.lib.workflow import Workflow
-from src.actions.stash_pull_requests import main, PullRequestWorkflow
+from src.actions.stash_pull_requests import PullRequestWorkflow
 from test.actions import AnyStringWith
 
 
