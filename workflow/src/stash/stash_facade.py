@@ -85,7 +85,8 @@ class StashFacade(object):
             'verify': self._verify,
             'stream': stream
         }
-        return requests.get(url, params=params, **options)
+        response = requests.get(url, params=params, **options)
+        return response
 
     def _page(self, url, params):
         has_more = True
@@ -106,5 +107,5 @@ class StashFacade(object):
                 yield item
 
             has_more = not json['isLastPage']
-            if not json['isLastPage']:
+            if has_more:
                 start = json['nextPageStart']
