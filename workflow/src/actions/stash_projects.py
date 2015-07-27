@@ -36,6 +36,7 @@ class ProjectFilteredWorkflow(StashFilteredWorkflow):
                     subtitle=project.description,
                     arg=project.link,
                     valid=True,
+                    largetext=project.name,
                     icon=wf.cachefile('{}/{}'.format(PROJECT_AVATAR_DIR, project.key)))
 
     def _get_result_filter(self):

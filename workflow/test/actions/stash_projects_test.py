@@ -35,10 +35,12 @@ class TestStashProjects(TestCase):
         main(workflow)
 
         # THEN
-        two_calls = [call(title='My Cool Project 1', subtitle='The description for my cool project 1.',
+        two_calls = [call(title='My Cool Project 1', largetext='My Cool Project 1',
+                          subtitle='The description for my cool project 1.',
                           valid=True, icon=ANY, arg='http://link/to/project1'),
-                     call(title=u'My Cool Project 2', subtitle='The description for my cool project 2.',
-                          valid=True, icon=ANY, arg='http://link/to/project2')]
+                     call(title='My Cool Project 2', largetext='My Cool Project 2',
+                          subtitle='The description for my cool project 2.', valid=True,
+                          icon=ANY, arg='http://link/to/project2')]
         workflow.add_item.assert_has_calls(two_calls)
         self.assertTrue(workflow.send_feedback.called)
 
@@ -55,7 +57,7 @@ class TestStashProjects(TestCase):
         main(workflow)
 
         # THEN
-        workflow.add_item.assert_called_once_with(title='My Cool Project 1',
+        workflow.add_item.assert_called_once_with(title='My Cool Project 1', largetext='My Cool Project 1',
                                                   subtitle='The description for my cool project 1.',
                                                   valid=True, icon=ANY, arg='http://link/to/project1')
         self.assertTrue(workflow.send_feedback.called)

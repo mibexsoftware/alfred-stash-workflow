@@ -43,11 +43,13 @@ class TestStashPullRequests(TestCase):
 
         # THEN
         two_calls = [call(title=u'repo_1 #1: develop → master',
+                          largetext='Super important new feature',
                           subtitle='Super important new feature',
                           valid=True,
                           icon=ANY,
                           arg='http://localhost:7990/stash/projects/PROJECT_1/repos/rep_1/pull-requests/1'),
                      call(title=u'repo_2 #4: bugfix/XYZ → develop',
+                          largetext='Nasty bug',
                           subtitle='Nasty bug',
                           valid=True,
                           icon=ANY,
@@ -70,6 +72,7 @@ class TestStashPullRequests(TestCase):
 
         # THEN
         workflow.add_item.assert_called_once_with(title=u'repo_1 #1: develop → master',
+                                                  largetext='Super important new feature',
                                                   subtitle='Super important new feature',
                                                   valid=True,
                                                   icon=ANY,

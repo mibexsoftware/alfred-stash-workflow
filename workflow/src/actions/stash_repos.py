@@ -42,6 +42,7 @@ class RepositoryWorkflow(StashFilteredWorkflow):
                                                  FORK if repo.fork else ''),
                     arg=repo.link,
                     valid=True,
+                    largetext=repo.name,
                     copytext=repo.clone_url,  # allows to use CMD+C to copy the clone URL
                     icon=wf.cachefile('{}/{}'.format(PROJECT_AVATAR_DIR, repo.project_key)))
 

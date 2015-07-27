@@ -41,6 +41,7 @@ class PullRequestWorkflow(StashFilteredWorkflow):
                                                     pull_request.from_branch, pull_request.to_branch),
                     subtitle=pull_request.title,
                     arg=pull_request.link,
+                    largetext=pull_request.title,
                     valid=True,
                     icon=wf.cachefile('{}/{}'.format(PROJECT_AVATAR_DIR, pull_request.project_key)))
 

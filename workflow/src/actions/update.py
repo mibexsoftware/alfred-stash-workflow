@@ -61,7 +61,9 @@ def _find_all_projects(wf, stash_facade):
     return projects
 
 
-def _fetch_stash_data_if_necessary(wf, stash_facade):
+def _fetch_stash_data_if_necessary(wf):
+    stash_facade = build_stash_facade(wf)
+
     # cached_data can only take a bare callable (no args),
     # so we need to wrap callables needing arguments in a function
     # that needs none.
@@ -103,8 +105,7 @@ def _fetch_stash_data_if_necessary(wf, stash_facade):
 
 
 def main(wf):
-    stash_facade = build_stash_facade(wf)
-    _fetch_stash_data_if_necessary(wf, stash_facade)
+    _fetch_stash_data_if_necessary(wf)
 
 
 if __name__ == '__main__':

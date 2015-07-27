@@ -33,10 +33,10 @@ class TestStashRepos(TestCase):
         main(workflow)
 
         # THEN
-        two_calls = [call(title='My Cool Project / My repo 1  ',
+        two_calls = [call(title='My Cool Project / My repo 1  ', largetext='My repo 1',
                           copytext='https://<baseURL>/scm/PRJ/my-repo1.git',
                           valid=True, icon=ANY, arg='http://link/to/repository1'),
-                     call(title=u'My Cool Project / My repo 2 {} {}'.format(PUBLIC, FORK),
+                     call(title=u'My Cool Project / My repo 2 {} {}'.format(PUBLIC, FORK), largetext='My repo 2',
                           copytext='https://<baseURL>/scm/PRJ/my-repo2.git',
                           valid=True, icon=ANY, arg='http://link/to/repository2')]
         workflow.add_item.assert_has_calls(two_calls)
@@ -55,7 +55,7 @@ class TestStashRepos(TestCase):
         main(workflow)
 
         # THEN
-        workflow.add_item.assert_called_once_with(title='My Cool Project / My repo 1  ',
+        workflow.add_item.assert_called_once_with(title='My Cool Project / My repo 1  ', largetext='My repo 1',
                                                   copytext='https://<baseURL>/scm/PRJ/my-repo1.git',
                                                   valid=True, icon=ANY, arg='http://link/to/repository1')
         self.assertTrue(workflow.send_feedback.called)
