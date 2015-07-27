@@ -85,6 +85,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>46C14F04-196D-4C6E-BDEE-36A8C8B94F17</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4B0548C9-B934-46F5-9F40-2311E02D8AFD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>60802B93-0BE9-486C-BB3B-18F864F78D70</key>
 		<array>
 			<dict>
@@ -134,6 +145,17 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>390F2D9F-A7EA-43BE-8AA2-030D9B5474B3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>CD8E413D-5F63-40C1-9500-0CB6CB08AE9C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6F121789-9FCF-44C8-9226-2D8208860236</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -507,7 +529,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>stash pullrequests</string>
+				<string>stash pullrequests review</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -517,14 +539,14 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>Getting open pull requests from Stash...</string>
+				<string>Getting your pull requests to review from Stash...</string>
 				<key>script</key>
-				<string>python -msrc.actions.stash_pull_requests "{query}"
+				<string>python -msrc.actions.stash_pull_requests --review "{query}"
 
 # In case you are experiencing unsolveable issues,
 # you can generate a log file to help me. Modify the
 # first line here so it looks like this:
-# python -msrc.actions.stash_pull_requests "{query}" | tee ~/Desktop/alfred-stash-workflow.log</string>
+# python -msrc.actions.stash_pull_requests --review "{query}" | tee ~/Desktop/alfred-stash-workflow.log</string>
 				<key>subtext</key>
 				<string>Type some text to search for pull requests and hit ENTER to open one in your default browser</string>
 				<key>title</key>
@@ -727,6 +749,139 @@
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>1DE3BB83-5A88-486D-8543-FA7FBACD2902</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>6F121789-9FCF-44C8-9226-2D8208860236</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>stash pullrequests created</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Getting your created pull requests from Stash...</string>
+				<key>script</key>
+				<string>python -msrc.actions.stash_pull_requests --created "{query}"
+
+# In case you are experiencing unsolveable issues,
+# you can generate a log file to help me. Modify the
+# first line here so it looks like this:
+# python -msrc.actions.stash_pull_requests --created "{query}" | tee ~/Desktop/alfred-stash-workflow.log</string>
+				<key>subtext</key>
+				<string>Type some text to search for pull requests and hit ENTER to open one in your default browser</string>
+				<key>title</key>
+				<string>Search your created pull requests in Stash</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>CD8E413D-5F63-40C1-9500-0CB6CB08AE9C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>stash pullrequests open</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Getting open pull requests from Stash...</string>
+				<key>script</key>
+				<string>python -msrc.actions.stash_pull_requests --open "{query}"
+
+# In case you are experiencing unsolveable issues,
+# you can generate a log file to help me. Modify the
+# first line here so it looks like this:
+# python -msrc.actions.stash_pull_requests --open "{query}" | tee ~/Desktop/alfred-stash-workflow.log</string>
+				<key>subtext</key>
+				<string>Type some text to search for pull requests and hit ENTER to open one in your default browser</string>
+				<key>title</key>
+				<string>Search open pull requests in Stash</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>46C14F04-196D-4C6E-BDEE-36A8C8B94F17</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>4B0548C9-B934-46F5-9F40-2311E02D8AFD</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string># Alfred Workflow for Atlassian Stash
@@ -756,6 +911,11 @@ Thanks to Dean Jackson for building the awesome Python library Alfred Workflow.<
 		<dict>
 			<key>ypos</key>
 			<real>250</real>
+		</dict>
+		<key>1DE3BB83-5A88-486D-8543-FA7FBACD2902</key>
+		<dict>
+			<key>ypos</key>
+			<real>960</real>
 		</dict>
 		<key>20F68629-3472-425E-9A5B-89FB0317227F</key>
 		<dict>
@@ -797,6 +957,16 @@ Thanks to Dean Jackson for building the awesome Python library Alfred Workflow.<
 			<key>ypos</key>
 			<real>370</real>
 		</dict>
+		<key>46C14F04-196D-4C6E-BDEE-36A8C8B94F17</key>
+		<dict>
+			<key>ypos</key>
+			<real>1200</real>
+		</dict>
+		<key>4B0548C9-B934-46F5-9F40-2311E02D8AFD</key>
+		<dict>
+			<key>ypos</key>
+			<real>1200</real>
+		</dict>
 		<key>60802B93-0BE9-486C-BB3B-18F864F78D70</key>
 		<dict>
 			<key>ypos</key>
@@ -806,6 +976,11 @@ Thanks to Dean Jackson for building the awesome Python library Alfred Workflow.<
 		<dict>
 			<key>ypos</key>
 			<real>370</real>
+		</dict>
+		<key>6F121789-9FCF-44C8-9226-2D8208860236</key>
+		<dict>
+			<key>ypos</key>
+			<real>1080</real>
 		</dict>
 		<key>7683B8DE-31FC-4D44-B5FF-AC7A292EFF49</key>
 		<dict>
@@ -841,6 +1016,11 @@ Thanks to Dean Jackson for building the awesome Python library Alfred Workflow.<
 		<dict>
 			<key>ypos</key>
 			<real>720</real>
+		</dict>
+		<key>CD8E413D-5F63-40C1-9500-0CB6CB08AE9C</key>
+		<dict>
+			<key>ypos</key>
+			<real>1080</real>
 		</dict>
 		<key>DCDFB9FF-D654-4023-827E-CFD49CF08539</key>
 		<dict>

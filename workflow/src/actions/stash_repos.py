@@ -19,7 +19,8 @@ from __future__ import print_function, unicode_literals
 
 import sys
 
-from src.actions import PROJECT_AVATAR_DIR, create_workflow, StashFilteredWorkflow, REPOS_CACHE_KEY
+from src.actions import PROJECT_AVATAR_DIR, create_workflow, StashFilteredWorkflow, REPOS_CACHE_KEY, \
+    UPDATE_INTERVAL_REPOS
 
 # Icons shown in Alfred results
 FORK = '⑂'
@@ -31,9 +32,10 @@ class RepositoryWorkflow(StashFilteredWorkflow):
         super(RepositoryWorkflow, self).__init__(entity_name='repositories',
                                                  wf=wf,
                                                  doc_args=__doc__,
-                                                 cache_key=REPOS_CACHE_KEY)
+                                                 cache_key=REPOS_CACHE_KEY,
+                                                 update_interval=UPDATE_INTERVAL_REPOS)
 
-    def add_to_result_list(self, repo, wf):
+    def _add_to_result_list(self, repo, wf):
         wf.add_item(title='{} / {} {} {}'.format(repo.project_name,
                                                  repo.name,
                                                  PUBLIC if repo.public else '',
@@ -43,7 +45,7 @@ class RepositoryWorkflow(StashFilteredWorkflow):
                     copytext=repo.clone_url,  # allows to use CMD+C to copy the clone URL
                     icon=wf.cachefile('{}/{}'.format(PROJECT_AVATAR_DIR, repo.project_key)))
 
-    def get_result_filter(self):
+    def _get_result_filter(self):
         return lambda r: u' '.join([r.name, r.project_name])
 
 

@@ -19,7 +19,8 @@ from __future__ import print_function, unicode_literals
 
 import sys
 
-from src.actions import PROJECT_AVATAR_DIR, create_workflow, StashFilteredWorkflow, PROJECTS_CACHE_KEY
+from src.actions import PROJECT_AVATAR_DIR, create_workflow, StashFilteredWorkflow, PROJECTS_CACHE_KEY, \
+    UPDATE_INTERVAL_PROJECTS
 
 
 class ProjectFilteredWorkflow(StashFilteredWorkflow):
@@ -27,16 +28,17 @@ class ProjectFilteredWorkflow(StashFilteredWorkflow):
         super(ProjectFilteredWorkflow, self).__init__(entity_name='projects',
                                                       wf=wf,
                                                       doc_args=__doc__,
-                                                      cache_key=PROJECTS_CACHE_KEY)
+                                                      cache_key=PROJECTS_CACHE_KEY,
+                                                      update_interval=UPDATE_INTERVAL_PROJECTS)
 
-    def add_to_result_list(self, project, wf):
+    def _add_to_result_list(self, project, wf):
         wf.add_item(title=project.name,
                     subtitle=project.description,
                     arg=project.link,
                     valid=True,
                     icon=wf.cachefile('{}/{}'.format(PROJECT_AVATAR_DIR, project.key)))
 
-    def get_result_filter(self):
+    def _get_result_filter(self):
         return lambda p: u' '.join([p.name, p.description])
 
 

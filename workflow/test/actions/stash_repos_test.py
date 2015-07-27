@@ -10,12 +10,12 @@ from test.actions import AnyStringWith
 
 
 class TestStashRepos(TestCase):
-    REPOS = [Repository(name="My repo 1", link="http://link/to/repository1", project_key="PRJ",
-                        project_name="My Cool Project", public=False, fork=False,
+    REPOS = [Repository(name='My repo 1', slug='rep_1', link='http://link/to/repository1', project_key='PRJ',
+                        project_name='My Cool Project', public=False, fork=False,
                         clone_url="https://<baseURL>/scm/PRJ/my-repo1.git"),
-             Repository(name="My repo 2", link="http://link/to/repository2", project_key="PRJ",
-                        project_name="My Cool Project", public=True, fork=True,
-                        clone_url="https://<baseURL>/scm/PRJ/my-repo2.git")]
+             Repository(name='My repo 2', slug='rep_2', link='http://link/to/repository2', project_key='PRJ',
+                        project_name='My Cool Project', public=True, fork=True,
+                        clone_url='https://<baseURL>/scm/PRJ/my-repo2.git')]
 
     def tearDown(self):
         # clear caches

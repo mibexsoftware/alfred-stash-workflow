@@ -5,7 +5,7 @@ from unittest import TestCase, skip
 from mock import patch, PropertyMock, ANY, call
 from src.stash import PullRequest
 from src.lib.workflow import Workflow
-from src.actions.stash_pull_requests import main
+from src.actions.stash_pull_requests import main, PullRequestWorkflow
 from test.actions import AnyStringWith
 
 
@@ -38,7 +38,8 @@ class TestStashPullRequests(TestCase):
         workflow.cached_data_fresh.return_value = True
 
         # WHEN
-        main(workflow)
+        wf = PullRequestWorkflow(wf=workflow, cache_key=None, update_interval=None)
+        wf.run()
 
         # THEN
         two_calls = [call(title=u'repo_1 #1: develop → master',
@@ -64,7 +65,8 @@ class TestStashPullRequests(TestCase):
         workflow.filter.return_value = [self.PULL_REQUESTS[0]]
 
         # WHEN
-        main(workflow)
+        wf = PullRequestWorkflow(wf=workflow, cache_key=None, update_interval=None)
+        wf.run()
 
         # THEN
         workflow.add_item.assert_called_once_with(title=u'repo_1 #1: develop → master',
@@ -85,7 +87,8 @@ class TestStashPullRequests(TestCase):
         workflow.filter.return_value = []
 
         # WHEN
-        main(workflow)
+        wf = PullRequestWorkflow(wf=workflow, cache_key=None, update_interval=None)
+        wf.run()
 
         # THEN
         workflow.add_item.assert_called_once_with('No matching pull requests found.', icon=ANY)
@@ -101,7 +104,8 @@ class TestStashPullRequests(TestCase):
         background.is_running.return_value = True
 
         # WHEN
-        main(workflow)
+        wf = PullRequestWorkflow(wf=workflow, cache_key=None, update_interval=None)
+        wf.run()
 
         # THEN
         workflow.add_item.assert_called_once_with('Getting data from Stash. Please try again in a second or two...',
@@ -114,7 +118,8 @@ class TestStashPullRequests(TestCase):
         type(workflow).update_available = PropertyMock(return_value=True)
 
         # WHEN
-        main(workflow)
+        wf = PullRequestWorkflow(wf=workflow, cache_key=None, update_interval=None)
+        wf.run()
 
         # THEN
         workflow.add_item.assert_called_once_with(AnyStringWith('is available'),
@@ -126,9 +131,11 @@ class TestStashPullRequests(TestCase):
     def test_fail_when_stash_host_is_not_set(self, workflow):
         # GIVEN
         type(workflow).settings = PropertyMock(return_value={})
+        type(workflow).args = PropertyMock(return_value=['--review'])
 
         # WHEN
-        main(workflow)
+        wf = PullRequestWorkflow(wf=workflow, cache_key=None, update_interval=None)
+        wf.run()
 
         # THEN
         workflow.add_item.assert_called_once_with('Stash host URL not set. Type `stash config host <host_url>`.',

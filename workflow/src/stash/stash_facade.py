@@ -32,6 +32,13 @@ class StashFacade(object):
                      self._page(self._stash_url('/repos'), params={'limit': 1000})]
         return sorted(all_repos, key=lambda r: r.project_key)
 
+    def open_pull_requests(self):
+        return [PullRequest.from_json(json)
+                for repo in self.all_repositories()
+                for json in self._page(self._stash_url('/projects/{}/repos/{}/pull-requests').format(repo.project_key,
+                                                                                                     repo.slug),
+                                       params={'limit': 100})]
+
     def fetch_project_avatar(self, project_key):
         response = self._get(self._stash_url('/projects/{}/avatar.png'.format(project_key)), params={}, stream=True)
         response.raw.decode_content = True
@@ -46,9 +53,13 @@ class StashFacade(object):
         return response.raw
 
     def my_pull_requests_to_review(self):
-        # pull requests where I'm the author could be fetched by ?role=author
         return [PullRequest.from_json(json)
                 for json in self._page(self._inbox_plugin_url('/pull-requests'), params={'limit': 100})]
+
+    def my_created_pull_requests(self):
+        return [PullRequest.from_json(json)
+                for json in self._page(self._inbox_plugin_url('/pull-requests'), params={'role': 'author',
+                                                                                         'limit': 100})]
 
     def verify_stash_connection(self):
         self._get(self._stash_url('/repos'), params={'size': 1})

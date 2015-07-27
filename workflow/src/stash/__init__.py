@@ -33,8 +33,9 @@ class Project(EqualityMixin):
 
 
 class Repository(EqualityMixin):
-    def __init__(self, name, link, project_key, project_name, public, fork, clone_url):
+    def __init__(self, name, slug, link, project_key, project_name, public, fork, clone_url):
         self.name = name
+        self.slug = slug
         self.link = link
         self.project_key = project_key
         self.project_name = project_name
@@ -45,6 +46,7 @@ class Repository(EqualityMixin):
     @classmethod
     def from_json(cls, json):
         repository = cls(json['name'],
+                         json['slug'],
                          json['links']['self'][0]['href'],
                          json['project']['key'],
                          json['project']['name'],
@@ -54,9 +56,9 @@ class Repository(EqualityMixin):
         return repository
 
     def __str__(self):
-        return ('Repository(name="{}", link="{}", project_key="{}", '
+        return ('Repository(name="{}", slug="{}", link="{}", project_key="{}", '
                 'project_name="{}", public="{}", fork="{}", clone_url="{}")'
-                .format(self.name, self.link, self.project_key,
+                .format(self.name, self.slug, self.link, self.project_key,
                         self.project_name, self.public, self.fork, self.clone_url))
 
 

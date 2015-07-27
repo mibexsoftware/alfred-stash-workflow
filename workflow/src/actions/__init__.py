@@ -14,7 +14,10 @@ from src.stash.stash_facade import StashFacade
 HELP_URL = 'https://github.com/mibexsoftware/alfred-stash-workflow/issues'
 
 # How often to check for new / updated Stash data
-UPDATE_INTERVAL = 6 * 60 * 60  # every six hours
+UPDATE_INTERVAL_PROJECTS = 8 * 60 * 60  # eight hours
+UPDATE_INTERVAL_REPOS = 4 * 60 * 60  # four hours
+UPDATE_INTERVALL_MY_PULL_REQUESTS = 15 * 60  # 15 minutes
+UPDATE_INTERVALL_OPEN_PULL_REQUESTS = 30 * 60  # 30 minutes
 
 PROJECT_AVATAR_DIR = 'project_avatars'
 
@@ -30,7 +33,9 @@ VERIFY_CERT = 'verify_cert'
 
 PROJECTS_CACHE_KEY = 'projects'
 REPOS_CACHE_KEY = 'repos'
-PULL_REQUESTS_CACHE_KEY = 'pullrequests'
+PULL_REQUESTS_REVIEW_CACHE_KEY = 'pullrequests'
+PULL_REQUESTS_CREATED_CACHE_KEY = 'created_pullrequests'
+PULL_REQUESTS_OPEN_CACHE_KEY = 'open_pullrequests'
 
 
 def build_stash_facade(wf):
@@ -69,19 +74,18 @@ def notify_if_upgrade_available(wf):
 def _notify_if_cache_update_in_progress(wf):
     # Notify the user if the cache is being updated
     if is_running('update'):
-        wf.add_item('Getting data from Stash. Please try again in a second or two...',
+        wf.add_item('Getting data from Stash. List will be up-to-date in a second or two...',
                     valid=False,
                     icon=ICON_INFO)
 
 
-def _get_data_from_cache(wf, cache_key):
-    # Get repos from cache. Set `data_func` to None, as we don't want to
-    # update the cache in this script and `max_age` to 0 because we want
-    # the cached data regardless of age
+def _get_data_from_cache(wf, cache_key, update_interval):
+    # Set `data_func` to None, as we don't want to update the cache in this script and `max_age` to 0
+    # because we want the cached data regardless of age
     data = wf.cached_data(cache_key, None, max_age=0)
 
     # Start update script if cached data is too old (or doesn't exist)
-    if not wf.cached_data_fresh(cache_key, max_age=UPDATE_INTERVAL):
+    if not wf.cached_data_fresh(cache_key, max_age=update_interval):
         _update_stash_cache()
 
     return data
@@ -103,28 +107,27 @@ def create_workflow():
 
 
 class StashFilteredWorkflow(object):
-    def __init__(self, entity_name, wf, doc_args, cache_key):
+    def __init__(self, entity_name, wf, doc_args, cache_key, update_interval):
         self.entity_name = entity_name
         self.wf = wf
         self.args = docopt(doc_args, wf.args)
         self.cache_key = cache_key
+        self.update_interval = update_interval
 
     def run(self):
         self.wf.logger.debug('workflow args: {}'.format(self.args))
 
         if not _check_stash_config(self.wf):
             return 0
-
         if self.args.get('--update'):
             _update_stash_cache()
-
         notify_if_upgrade_available(self.wf)
-        entities = _get_data_from_cache(self.wf, self.cache_key)
+        entities = _get_data_from_cache(self.wf, self.cache_key, self.update_interval)
         _notify_if_cache_update_in_progress(self.wf)
         query = self.args.get('<query>')
 
         if query and entities:  # query may not be empty or contain only whitespace. This will raise a ValueError.
-            entities = self.wf.filter(query, entities, key=self.get_result_filter(), min_score=SEARCH_MIN_SCORE)
+            entities = self.wf.filter(query, entities, key=self._get_result_filter(), min_score=SEARCH_MIN_SCORE)
             self.wf.logger.debug('{} {} matching `{}`'.format(self.entity_name, len(entities), query))
 
         if not entities:
@@ -133,13 +136,13 @@ class StashFilteredWorkflow(object):
             return 0
 
         for e in entities:
-            self.add_to_result_list(e, self.wf)
+            self._add_to_result_list(e, self.wf)
 
         self.wf.send_feedback()
         return 0
 
-    def get_result_filter(self):
+    def _get_result_filter(self):
         raise NotImplementedError
 
-    def add_to_result_list(self, entity, wf):
+    def _add_to_result_list(self, entity, wf):
         raise NotImplementedError

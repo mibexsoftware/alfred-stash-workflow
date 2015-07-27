@@ -24,9 +24,12 @@ Get this Stash workflow for Alfred from [GitHub][gh-releases] or [Packal][packal
 	+ `⌘+C` — Copy repository's clone URL to your clipboard
 - `stash projects [query]` — View/search for projects in Stash
 	+ `↩` Open project page on Stash in your browser
-- `stash pullrequests [query]` — View/search for pull requests to review for the configured user in Stash
+- `stash pullrequests review [query]` — View/search for pull requests to review for the configured user in Stash
 	+ `↩` Open pull request page on Stash in your browser
-
+- `stash pullrequests created [query]` — View/search for created pull requests of the configured user in Stash
+	+ `↩` Open pull request page on Stash in your browser	
+- `stash pullrequests open [query]` — View/search for all open pull requests in Stash
+	+ `↩` Open pull request page on Stash in your browser	
 
 ## Configuration ##
 
