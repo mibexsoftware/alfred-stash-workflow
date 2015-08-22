@@ -1,0 +1,1 @@
+Apple script to launch Alfred copied from by https://github.com/idpaterson/alfred-wunderlist-workflow

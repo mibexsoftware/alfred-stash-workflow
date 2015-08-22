@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
 
 from src.lib import requests
-from src.stash import Project, Repository, PullRequest
 
 
 # We use requests library for HTTP connections because workflow.web does not verify SSL certificates!
 # see http://www.deanishe.net/alfred-workflow/api/web.html
+from src.stash.project import Project
+from src.stash.pull_request import PullRequest
+from src.stash.repository import Repository
+
 
 class StashFacade(object):
     STASH_API_VERSION = '1.0'

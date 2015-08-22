@@ -8,165 +8,33 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
-		<key>16144AC9-B63D-425C-A94C-1463CCDF909B</key>
+		<key>020ABCAB-04CC-4B49-B994-1C17D397C305</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>DCDFB9FF-D654-4023-827E-CFD49CF08539</string>
+				<string>D36D8EE4-14C7-4114-869E-088B7D4938BD</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 			</dict>
 		</array>
-		<key>20F68629-3472-425E-9A5B-89FB0317227F</key>
+		<key>D36D8EE4-14C7-4114-869E-088B7D4938BD</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>60802B93-0BE9-486C-BB3B-18F864F78D70</string>
+				<string>FEBDE5AB-4433-4FD7-BF55-709C4FAE0F21</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 			</dict>
 		</array>
-		<key>2D972E4C-C086-45E4-9ADB-37EA0E6DD399</key>
+		<key>FEBDE5AB-4433-4FD7-BF55-709C4FAE0F21</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>970886EF-FB0D-4B3F-9880-42B881869C1D</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>32FFD589-0337-4BDC-8C3F-43291FD8C8E4</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>77018CEC-5794-4ED6-A27A-41FD5E58635A</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>350F7F39-ED95-45D9-9D46-847C3775DBEE</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>2D972E4C-C086-45E4-9ADB-37EA0E6DD399</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>3E315C2D-F107-4971-B014-EF7E844592E6</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>7683B8DE-31FC-4D44-B5FF-AC7A292EFF49</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>464B8532-82CE-4BB2-9974-33AA7E4CECF5</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>63CADE15-956E-413A-8B45-E7ADDDE7D304</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>46C14F04-196D-4C6E-BDEE-36A8C8B94F17</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>4B0548C9-B934-46F5-9F40-2311E02D8AFD</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>60802B93-0BE9-486C-BB3B-18F864F78D70</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>0EAB8947-A081-4880-A8ED-729C6A1D1451</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>63CADE15-956E-413A-8B45-E7ADDDE7D304</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>FB021DD8-2B33-4DEC-B738-7367E1D286EC</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>77018CEC-5794-4ED6-A27A-41FD5E58635A</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>01F476E8-04DE-4E32-9DCA-F79DB9962946</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>7EE68CBE-2237-469C-8F95-ED69FCB7156B</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>CA1BB542-DBB8-443C-8612-17F79861E17B</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>B845CDDA-6A79-428B-BDBF-4BC33594F8B4</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>390F2D9F-A7EA-43BE-8AA2-030D9B5474B3</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>CD8E413D-5F63-40C1-9500-0CB6CB08AE9C</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>6F121789-9FCF-44C8-9226-2D8208860236</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>DCDFB9FF-D654-4023-827E-CFD49CF08539</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>BC8084CE-BFBA-45DC-A69B-8DBA68EA1649</string>
+				<string>67ED7960-01B8-4C5D-8716-A4ED5FCDC054</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -187,271 +55,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>stash projects</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
+				<key>action</key>
 				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Getting projects from Stash...</string>
-				<key>script</key>
-				<string>python -msrc.actions.stash_projects "{query}"
-
-# In case you are experiencing unsolveable issues,
-# you can generate a log file to help me. Modify the
-# first line here so it looks like this:
-# python -msrc.actions.stash_projects "{query}" | tee ~/Desktop/alfred-stash-workflow.log</string>
-				<key>subtext</key>
-				<string>Type some text to search for projects and hit ENTER to open one in your default browser</string>
-				<key>title</key>
-				<string>Search across all projects in Stash</string>
-				<key>type</key>
+				<key>argument</key>
 				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>B845CDDA-6A79-428B-BDBF-4BC33594F8B4</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>plusspaces</key>
-				<false/>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>390F2D9F-A7EA-43BE-8AA2-030D9B5474B3</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
+				<key>hotkey</key>
 				<integer>0</integer>
-				<key>keyword</key>
-				<string>stash config host</string>
-				<key>subtext</key>
-				<string>Configure your Atlassian Stash host URL and hit ENTER</string>
-				<key>text</key>
-				<string>Configure your Stash host URL</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>20F68629-3472-425E-9A5B-89FB0317227F</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>output</key>
+				<key>hotmod</key>
 				<integer>0</integer>
-				<key>removeextension</key>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
 				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>New value: {query}</string>
-				<key>title</key>
-				<string>Saved Stash Host URL</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>0EAB8947-A081-4880-A8ED-729C6A1D1451</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>python -msrc.actions.stash_config --sethost "{query}"
-
-# In case you are experiencing unsolveable issues,
-# you can generate a log file to help me. Modify the
-# first line here so it looks like this:
-# python -msrc.actions.stash_config --sethost "{query}" | tee ~/Desktop/alfred-stash-workflow.log</string>
-				<key>type</key>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
 				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>60802B93-0BE9-486C-BB3B-18F864F78D70</string>
+			<string>020ABCAB-04CC-4B49-B994-1C17D397C305</string>
 			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>stash config user</string>
-				<key>subtext</key>
-				<string>Enter your Stash user name and hit ENTER</string>
-				<key>text</key>
-				<string>Configure your Stash user name</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>16144AC9-B63D-425C-A94C-1463CCDF909B</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>New value: {query}</string>
-				<key>title</key>
-				<string>Saved Stash user</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>BC8084CE-BFBA-45DC-A69B-8DBA68EA1649</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>python -msrc.actions.stash_config --setuser "{query}"
-
-# In case you are experiencing unsolveable issues,
-# you can generate a log file to help me. Modify the
-# first line here so it looks like this:
-# python -msrc.actions.stash_config --setuser "{query}" | tee ~/Desktop/alfred-stash-workflow.log</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>DCDFB9FF-D654-4023-827E-CFD49CF08539</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>python -msrc.actions.stash_config --setpassword "{query}"
-
-# In case you are experiencing unsolveable issues,
-# you can generate a log file to help me. Modify the
-# first line here so it looks like this:
-# python -msrc.actions.stash_config --setpassword "{query}" | tee ~/Desktop/alfred-stash-workflow.log</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>63CADE15-956E-413A-8B45-E7ADDDE7D304</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>Your Atlassian Stash password was saved in Keychain.</string>
-				<key>title</key>
-				<string>Saved Stash password</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>FB021DD8-2B33-4DEC-B738-7367E1D286EC</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>stash config password</string>
-				<key>subtext</key>
-				<string>Set your Atlassian Stash password and hit ENTER</string>
-				<key>text</key>
-				<string>Configure your Stash password</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>464B8532-82CE-4BB2-9974-33AA7E4CECF5</string>
-			<key>version</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -466,13 +92,15 @@
 				<false/>
 				<key>sticky</key>
 				<false/>
-				<key>title</key>
+				<key>text</key>
 				<string>{query}</string>
+				<key>title</key>
+				<string>Atlassian Stash</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>01F476E8-04DE-4E32-9DCA-F79DB9962946</string>
+			<string>67ED7960-01B8-4C5D-8716-A4ED5FCDC054</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -484,40 +112,19 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>python -msrc.actions.stash_config --setverify "{query}"
+				<string>python -msrc.stash_workflow "{query}" --exec
 
 # In case you are experiencing unsolveable issues,
 # you can generate a log file to help me. Modify the
 # first line here so it looks like this:
-# python -msrc.actions.stash_config --setverify "{query}" | tee ~/Desktop/alfred-stash-workflow.log</string>
+# python -msrc.stash_workflow "{query}" --exec | tee ~/Desktop/alfred-stash-workflow-commit.log</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>77018CEC-5794-4ED6-A27A-41FD5E58635A</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>stash config verifycert</string>
-				<key>subtext</key>
-				<string>Enter true or false and ENTER depending if you want certificates being verified or not</string>
-				<key>text</key>
-				<string>Configure if SSL certificates should be verified</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>32FFD589-0337-4BDC-8C3F-43291FD8C8E4</string>
+			<string>FEBDE5AB-4433-4FD7-BF55-709C4FAE0F21</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -529,195 +136,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>stash pullrequests review</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Getting your pull requests to review from Stash...</string>
-				<key>script</key>
-				<string>python -msrc.actions.stash_pull_requests --review "{query}"
-
-# In case you are experiencing unsolveable issues,
-# you can generate a log file to help me. Modify the
-# first line here so it looks like this:
-# python -msrc.actions.stash_pull_requests --review "{query}" | tee ~/Desktop/alfred-stash-workflow.log</string>
-				<key>subtext</key>
-				<string>Type some text to search for pull requests and hit ENTER to open one in your default browser</string>
-				<key>title</key>
-				<string>Search your pull requests to review in Stash</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>3E315C2D-F107-4971-B014-EF7E844592E6</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>plusspaces</key>
-				<false/>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>7683B8DE-31FC-4D44-B5FF-AC7A292EFF49</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>stash repos</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Getting repositories from Stash...</string>
-				<key>script</key>
-				<string>python -msrc.actions.stash_repos "{query}"
-
-# In case you are experiencing unsolveable issues,
-# you can generate a log file to help me. Modify the
-# first line here so it looks like this:
-# python -msrc.actions.stash_repos "{query}" | tee ~/Desktop/alfred-stash-workflow.log</string>
-				<key>subtext</key>
-				<string>Hit ENTER to open a repository in your browser. Type CMD+C to copy its clone URL to the clipboard.</string>
-				<key>title</key>
-				<string>Search across all repositories in Stash</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>7EE68CBE-2237-469C-8F95-ED69FCB7156B</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>plusspaces</key>
-				<false/>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>CA1BB542-DBB8-443C-8612-17F79861E17B</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>python -msrc.actions.stash_config --delcache
-
-# In case you are experiencing unsolveable issues,
-# you can generate a log file to help me. Modify the
-# first line here so it looks like this:
-# python -msrc.actions.stash_config --delcache | tee ~/Desktop/alfred-stash-workflow.log</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>2D972E4C-C086-45E4-9ADB-37EA0E6DD399</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>stash config delcache</string>
-				<key>subtext</key>
-				<string>Deletes all cached repository, project and pull request data</string>
-				<key>text</key>
-				<string>Delete all cached data</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>350F7F39-ED95-45D9-9D46-847C3775DBEE</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>You can now query for Stash information again.</string>
-				<key>title</key>
-				<string>All cached data deleted</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>970886EF-FB0D-4B3F-9880-42B881869C1D</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>stash config check</string>
+				<string>stash</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -727,16 +146,16 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>script</key>
-				<string>python -msrc.actions.stash_config --check
+				<string>python -msrc.stash_workflow "{query}"
 
 # In case you are experiencing unsolveable issues,
 # you can generate a log file to help me. Modify the
 # first line here so it looks like this:
-# python -msrc.actions.stash_config --check | tee ~/Desktop/alfred-stash-workflow.log</string>
+# python -msrc.stash_workflow "{query}" | tee ~/Desktop/alfred-stash-workflow.log</string>
 				<key>subtext</key>
-				<string>Verifies if a connection to Stash can be established with the given config parameters.</string>
+				<string>Search for repositories, projects and pull requests</string>
 				<key>title</key>
-				<string>Check Stash connection configuration</string>
+				<string>Atlassian Stash Workflow</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -745,140 +164,7 @@
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>2BEA5C3D-8D85-40F7-A30C-ACF420CE4920</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>plusspaces</key>
-				<false/>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>1DE3BB83-5A88-486D-8543-FA7FBACD2902</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>plusspaces</key>
-				<false/>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>6F121789-9FCF-44C8-9226-2D8208860236</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>stash pullrequests created</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Getting your created pull requests from Stash...</string>
-				<key>script</key>
-				<string>python -msrc.actions.stash_pull_requests --created "{query}"
-
-# In case you are experiencing unsolveable issues,
-# you can generate a log file to help me. Modify the
-# first line here so it looks like this:
-# python -msrc.actions.stash_pull_requests --created "{query}" | tee ~/Desktop/alfred-stash-workflow.log</string>
-				<key>subtext</key>
-				<string>Type some text to search for pull requests and hit ENTER to open one in your default browser</string>
-				<key>title</key>
-				<string>Search your created pull requests in Stash</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>CD8E413D-5F63-40C1-9500-0CB6CB08AE9C</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>stash pullrequests open</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Getting open pull requests from Stash...</string>
-				<key>script</key>
-				<string>python -msrc.actions.stash_pull_requests --open "{query}"
-
-# In case you are experiencing unsolveable issues,
-# you can generate a log file to help me. Modify the
-# first line here so it looks like this:
-# python -msrc.actions.stash_pull_requests --open "{query}" | tee ~/Desktop/alfred-stash-workflow.log</string>
-				<key>subtext</key>
-				<string>Type some text to search for pull requests and hit ENTER to open one in your default browser</string>
-				<key>title</key>
-				<string>Search open pull requests in Stash</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>46C14F04-196D-4C6E-BDEE-36A8C8B94F17</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>plusspaces</key>
-				<false/>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>4B0548C9-B934-46F5-9F40-2311E02D8AFD</string>
+			<string>D36D8EE4-14C7-4114-869E-088B7D4938BD</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -897,140 +183,25 @@ This workflow, excluding the Atlassian Stash logo, is released under the MIT Lic
 Thanks to Dean Jackson for building the awesome Python library Alfred Workflow.</string>
 	<key>uidata</key>
 	<dict>
-		<key>01F476E8-04DE-4E32-9DCA-F79DB9962946</key>
+		<key>020ABCAB-04CC-4B49-B994-1C17D397C305</key>
 		<dict>
 			<key>ypos</key>
-			<real>490</real>
+			<real>20</real>
 		</dict>
-		<key>0EAB8947-A081-4880-A8ED-729C6A1D1451</key>
+		<key>67ED7960-01B8-4C5D-8716-A4ED5FCDC054</key>
 		<dict>
 			<key>ypos</key>
-			<real>130</real>
+			<real>20</real>
 		</dict>
-		<key>16144AC9-B63D-425C-A94C-1463CCDF909B</key>
+		<key>D36D8EE4-14C7-4114-869E-088B7D4938BD</key>
 		<dict>
 			<key>ypos</key>
-			<real>250</real>
+			<real>20</real>
 		</dict>
-		<key>1DE3BB83-5A88-486D-8543-FA7FBACD2902</key>
+		<key>FEBDE5AB-4433-4FD7-BF55-709C4FAE0F21</key>
 		<dict>
 			<key>ypos</key>
-			<real>960</real>
-		</dict>
-		<key>20F68629-3472-425E-9A5B-89FB0317227F</key>
-		<dict>
-			<key>ypos</key>
-			<real>130</real>
-		</dict>
-		<key>2BEA5C3D-8D85-40F7-A30C-ACF420CE4920</key>
-		<dict>
-			<key>ypos</key>
-			<real>960</real>
-		</dict>
-		<key>2D972E4C-C086-45E4-9ADB-37EA0E6DD399</key>
-		<dict>
-			<key>ypos</key>
-			<real>840</real>
-		</dict>
-		<key>32FFD589-0337-4BDC-8C3F-43291FD8C8E4</key>
-		<dict>
-			<key>ypos</key>
-			<real>490</real>
-		</dict>
-		<key>350F7F39-ED95-45D9-9D46-847C3775DBEE</key>
-		<dict>
-			<key>ypos</key>
-			<real>840</real>
-		</dict>
-		<key>390F2D9F-A7EA-43BE-8AA2-030D9B5474B3</key>
-		<dict>
-			<key>ypos</key>
-			<real>10</real>
-		</dict>
-		<key>3E315C2D-F107-4971-B014-EF7E844592E6</key>
-		<dict>
-			<key>ypos</key>
-			<real>610</real>
-		</dict>
-		<key>464B8532-82CE-4BB2-9974-33AA7E4CECF5</key>
-		<dict>
-			<key>ypos</key>
-			<real>370</real>
-		</dict>
-		<key>46C14F04-196D-4C6E-BDEE-36A8C8B94F17</key>
-		<dict>
-			<key>ypos</key>
-			<real>1200</real>
-		</dict>
-		<key>4B0548C9-B934-46F5-9F40-2311E02D8AFD</key>
-		<dict>
-			<key>ypos</key>
-			<real>1200</real>
-		</dict>
-		<key>60802B93-0BE9-486C-BB3B-18F864F78D70</key>
-		<dict>
-			<key>ypos</key>
-			<real>130</real>
-		</dict>
-		<key>63CADE15-956E-413A-8B45-E7ADDDE7D304</key>
-		<dict>
-			<key>ypos</key>
-			<real>370</real>
-		</dict>
-		<key>6F121789-9FCF-44C8-9226-2D8208860236</key>
-		<dict>
-			<key>ypos</key>
-			<real>1080</real>
-		</dict>
-		<key>7683B8DE-31FC-4D44-B5FF-AC7A292EFF49</key>
-		<dict>
-			<key>ypos</key>
-			<real>610</real>
-		</dict>
-		<key>77018CEC-5794-4ED6-A27A-41FD5E58635A</key>
-		<dict>
-			<key>ypos</key>
-			<real>490</real>
-		</dict>
-		<key>7EE68CBE-2237-469C-8F95-ED69FCB7156B</key>
-		<dict>
-			<key>ypos</key>
-			<real>720</real>
-		</dict>
-		<key>970886EF-FB0D-4B3F-9880-42B881869C1D</key>
-		<dict>
-			<key>ypos</key>
-			<real>840</real>
-		</dict>
-		<key>B845CDDA-6A79-428B-BDBF-4BC33594F8B4</key>
-		<dict>
-			<key>ypos</key>
-			<real>10</real>
-		</dict>
-		<key>BC8084CE-BFBA-45DC-A69B-8DBA68EA1649</key>
-		<dict>
-			<key>ypos</key>
-			<real>250</real>
-		</dict>
-		<key>CA1BB542-DBB8-443C-8612-17F79861E17B</key>
-		<dict>
-			<key>ypos</key>
-			<real>720</real>
-		</dict>
-		<key>CD8E413D-5F63-40C1-9500-0CB6CB08AE9C</key>
-		<dict>
-			<key>ypos</key>
-			<real>1080</real>
-		</dict>
-		<key>DCDFB9FF-D654-4023-827E-CFD49CF08539</key>
-		<dict>
-			<key>ypos</key>
-			<real>250</real>
-		</dict>
-		<key>FB021DD8-2B33-4DEC-B738-7367E1D286EC</key>
-		<dict>
-			<key>ypos</key>
-			<real>370</real>
+			<real>20</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
