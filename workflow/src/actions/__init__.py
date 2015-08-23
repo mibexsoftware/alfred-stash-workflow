@@ -71,10 +71,10 @@ def build_stash_facade():
 
 def _notify_if_cache_update_in_progress():
     # Notify the user if the cache is being updated
-    if is_running(u'update'):
+    if is_running(SYNC_JOB_NAME):
         workflow().add_item('Getting data from Stash. List will be up-to-date in a second or two...',
                             valid=False,
-                            icon=ICON_INFO)
+                            icon=icons.INFO)
 
 
 class StashWorkflowAction(object):
