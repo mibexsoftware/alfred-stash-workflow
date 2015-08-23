@@ -94,7 +94,7 @@ class ConfigureWorkflowAction(StashWorkflowAction):
             verify_cert = workflow().settings.get(VERIFY_CERT, 'false') == 'true'
             toggle = (str(not verify_cert)).lower()
             workflow().settings[VERIFY_CERT] = toggle
-            print('Enabled certificate verification' if toggle else 'Disabled certificate verification')
+            print('Enabled certificate verification' if toggle == 'true' else 'Disabled certificate verification')
         elif 'sync' in args:
             workflow().clear_cache()
             update_stash_cache()
