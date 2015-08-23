@@ -45,7 +45,7 @@
 	<key>createdby</key>
 	<string>Mibex Software GmbH</string>
 	<key>description</key>
-	<string>Search for repositories, projects and pull requests to review</string>
+	<string>Search for repositories, projects and pull requests in Atlassian Stash</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -172,15 +172,13 @@
 	<key>readme</key>
 	<string># Alfred Workflow for Atlassian Stash
 
-Version: 1.0.2
-
-Search for repositories, projects and pull requests to review.
+Search for repositories, projects and pull requests in Atlassian Stash.
 
 GitHub: https://github.com/mibexsoftware/alfred-stash-workflow
 
 This workflow, excluding the Atlassian Stash logo, is released under the MIT Licence.
 
-Thanks to Dean Jackson for building the awesome Python library Alfred Workflow.</string>
+Thanks to Dean Jackson for building the awesome Python library Alfred Workflow. Also thanks to Ian Paterson for the awesome Wunderlist workflow which is one of the nicest menu-based Alfred workflows we’ve seen so far and which has inspired our workflow deeply.</string>
 	<key>uidata</key>
 	<dict>
 		<key>020ABCAB-04CC-4B49-B994-1C17D397C305</key>

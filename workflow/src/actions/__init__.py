@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from src import icons
 
-from src.lib.workflow import (PasswordNotFound, Workflow)
+from src.lib.workflow import (PasswordNotFound)
 from src.lib.workflow.background import run_in_background
 from src.lib.workflow.background import is_running
 from src.lib.workflow import ICON_INFO
@@ -12,8 +12,6 @@ from src.stash.stash_facade import StashFacade
 # If the workflow throws an error, this URL will be displayed in the log
 # and Alfred's debugger. It can also be opened directly in a web browser with the workflow:help
 from src.util import workflow
-
-HELP_URL = 'https://github.com/mibexsoftware/alfred-stash-workflow/issues'
 
 # How often to check for new / updated Stash data
 UPDATE_INTERVAL_PROJECTS = 1 * 24 * 60 * 60  # every day
@@ -77,16 +75,6 @@ def _notify_if_cache_update_in_progress():
         workflow().add_item('Getting data from Stash. List will be up-to-date in a second or two...',
                             valid=False,
                             icon=ICON_INFO)
-
-
-def create_workflow():
-    wf = Workflow(help_url=HELP_URL,
-                  update_settings={
-                      'github_slug': 'mibexsoftware/alfred-stash-workflow',
-                      # Optional number of days between checks for updates
-                      'frequency': 1
-                  })
-    return wf
 
 
 class StashWorkflowAction(object):
