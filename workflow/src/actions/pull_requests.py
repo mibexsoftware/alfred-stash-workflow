@@ -66,7 +66,8 @@ _pull_request_modes = {
 
 def _num_pull_requests(mode):
     cache_key, update_interval = _pull_request_modes[mode]
-    return _counters.get(len(get_data_from_cache(cache_key, update_interval)), u'⑳⁺')
+    data = get_data_from_cache(cache_key, update_interval)
+    return _counters.get(len(data), u'⑳⁺') if data else ''
 
 
 class PullRequestWorkflowAction(StashWorkflowAction):
@@ -74,21 +75,21 @@ class PullRequestWorkflowAction(StashWorkflowAction):
         if len(args) == 2:
             workflow().add_item(
                 u'All open pull requests {}'.format(_num_pull_requests('open')),
-                'Search in all open pull requests and open them in your default browser',
+                'Search in all open pull requests',
                 arg=':pullrequests open',
                 icon=icons.OPEN,
                 valid=True
             )
             workflow().add_item(
                 u'Your pull requests to review {}'.format(_num_pull_requests('review')),
-                'Search in pull requests you have to review and open them in your default browser',
+                'Search in pull requests you have to review',
                 arg=':pullrequests review',
                 icon=icons.REVIEW,
                 valid=True
             )
             workflow().add_item(
                 u'Your created pull requests {}'.format(_num_pull_requests('created')),
-                'Search in pull requests you created and open them in your default browser',
+                'Search in pull requests you created',
                 arg=':pullrequests created',
                 icon=icons.CREATED,
                 valid=True
