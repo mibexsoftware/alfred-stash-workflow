@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from src.actions import HOST_URL, USER_NAME, USER_PW, VERIFY_CERT, \
-    StashWorkflowAction
+    StashWorkflowAction, update_stash_cache
 from src import icons
 from src.lib.workflow import PasswordNotFound
 from src.util import workflow, call_alfred

@@ -10,7 +10,7 @@ class HelpWorkflowAction(StashWorkflowAction):
         workflow().add_item(
             'About this version',
             'Current version: {}. See here for the changelog.'.format(__version__),
-            arg=':help version', valid=True, icon=icons.WHATSNEW
+            arg=':help version', valid=True, icon=icons.WHATS_NEW
         )
         workflow().add_item(
             'Found a bug or miss a feature?',

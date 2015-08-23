@@ -3,7 +3,9 @@
 from unittest import TestCase
 
 import httpretty
-from src.stash import Repository, PullRequest, Project
+from src.stash.project import Project
+from src.stash.pull_request import PullRequest
+from src.stash.repository import Repository
 from src.stash.stash_facade import StashFacade
 
 

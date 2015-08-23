@@ -7,22 +7,22 @@ from src.util import workflow
 class IndexWorkflowAction(StashWorkflowAction):
     def menu(self, args):
         workflow().add_item(
-            'Search for Stash projects',
+            'Search for projects',
             'Search for projects and open the project page in your default browser',
             autocomplete=':projects ',
             icon=icons.PROJECTS
         )
         workflow().add_item(
-            'Search for Stash repositories',
-            'Search for repositories and open the repository browse page in your default browser',
+            'Search for repositories',
+            'Search for repositories and open the repository page in your default browser',
             autocomplete=':repos ',
             icon=icons.REPOSITORIES
         )
         workflow().add_item(
-            'Search for Stash pull requests',
-            'Search in all pull requests, only the ones to review or the ones you created',
+            'Search for pull requests',
+            'Search for pull requests and open them in your default browser',
             autocomplete=':pullrequests ',
-            icon=icons.PULLREQUESTS
+            icon=icons.PULL_REQUESTS
         )
         workflow().add_item(
             'Preferences',

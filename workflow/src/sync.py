@@ -5,8 +5,8 @@ import os
 
 from src.actions import PROJECTS_CACHE_KEY, \
     UPDATE_INTERVAL_PROJECTS, build_stash_facade, PROJECT_AVATAR_DIR, UPDATE_INTERVAL_REPOS, REPOS_CACHE_KEY, \
-    PULL_REQUESTS_REVIEW_CACHE_KEY, UPDATE_INTERVALL_MY_PULL_REQUESTS, PULL_REQUESTS_CREATED_CACHE_KEY, \
-    PULL_REQUESTS_OPEN_CACHE_KEY, UPDATE_INTERVALL_OPEN_PULL_REQUESTS
+    PULL_REQUESTS_REVIEW_CACHE_KEY, UPDATE_INTERVAL_MY_PULL_REQUESTS, PULL_REQUESTS_CREATED_CACHE_KEY, \
+    PULL_REQUESTS_OPEN_CACHE_KEY, UPDATE_INTERVAL_OPEN_PULL_REQUESTS
 from src.util import workflow
 
 
@@ -82,7 +82,7 @@ def _fetch_stash_data_if_necessary(stash_facade):
 
     pull_requests_to_review = workflow().cached_data(PULL_REQUESTS_REVIEW_CACHE_KEY,
                                                      wrapper_pull_requests_to_review,
-                                                     max_age=UPDATE_INTERVALL_MY_PULL_REQUESTS)
+                                                     max_age=UPDATE_INTERVAL_MY_PULL_REQUESTS)
     workflow().logger.debug('{} pull requests to review cached'.format(len(pull_requests_to_review)))
 
     def wrapper_created_pull_requests():
@@ -90,7 +90,7 @@ def _fetch_stash_data_if_necessary(stash_facade):
 
     pull_requests_created = workflow().cached_data(PULL_REQUESTS_CREATED_CACHE_KEY,
                                                    wrapper_created_pull_requests,
-                                                   max_age=UPDATE_INTERVALL_MY_PULL_REQUESTS)
+                                                   max_age=UPDATE_INTERVAL_MY_PULL_REQUESTS)
     workflow().logger.debug('{} pull requests created cached'.format(len(pull_requests_created)))
 
     def wrapper_open_pull_requests():
@@ -98,7 +98,7 @@ def _fetch_stash_data_if_necessary(stash_facade):
 
     open_pull_requests = workflow().cached_data(PULL_REQUESTS_OPEN_CACHE_KEY,
                                                 wrapper_open_pull_requests,
-                                                max_age=UPDATE_INTERVALL_OPEN_PULL_REQUESTS)
+                                                max_age=UPDATE_INTERVAL_OPEN_PULL_REQUESTS)
     workflow().logger.debug('{} open pull requests cached'.format(len(open_pull_requests)))
 
 

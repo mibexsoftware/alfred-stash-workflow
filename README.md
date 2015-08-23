@@ -1,7 +1,6 @@
 # Alfred Workflow for Atlassian Stash #
 
 [![Build Status](http://img.shields.io/travis/mibexsoftware/alfred-stash-workflow.svg?style=flat-square)](https://travis-ci.org/mibexsoftware/alfred-stash-workflow)
-[![Coverage Status](https://coveralls.io/repos/mibexsoftware/alfred-stash-workflow/badge.svg?branch=master&service=github)](https://coveralls.io/github/mibexsoftware/alfred-stash-workflow?branch=master)
 [![Latest Version](http://img.shields.io/github/release/mibexsoftware/alfred-stash-workflow.svg?style=flat-square)](https://github.com/mibexsoftware/alfred-stash-workflow/releases)
 [![License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](http://mibexsoftware.mit-license.org/2015)
 
@@ -14,39 +13,23 @@ Alfred workflow to search for projects, repositories and pull requests to review
 
 ## Download ##
 
-Get this Stash workflow for Alfred from [GitHub][gh-releases] or [Packal][packal-page]. See this [guide][alfred-workflow-installation] on how to install a workflow in Alfred (basically, you just have to open the file by double-clicking on it).
+Get this Stash workflow for Alfred from [GitHub][gh-releases] or [Packal][packal-page]. See 
+this [guide][alfred-workflow-installation] on how to install a workflow in Alfred (basically, you 
+just have to open the file by double-clicking on it).
+
+
+## Configuration ##
+
+You have to configure the parameters for connecting to your Stash instance. Use the following command:
+
+- `stash:config` — Configure the Stash host URL, and if necessary, a username and password
 
 
 ## Usage ##
 
-- `stash repos [query]` — View/search for repositories in Stash
-	+ `↩` — Open repository page on Stash in your browser
-	+ `⌘+C` — Copy repository's clone URL to your clipboard
-- `stash projects [query]` — View/search for projects in Stash
-	+ `↩` Open project page on Stash in your browser
-- `stash pullrequests review [query]` — View/search for pull requests to review for the configured user in Stash
-	+ `↩` Open pull request page on Stash in your browser
-- `stash pullrequests created [query]` — View/search for created pull requests of the configured user in Stash
-	+ `↩` Open pull request page on Stash in your browser	
-- `stash pullrequests open [query]` — View/search for all open pull requests in Stash
-	+ `↩` Open pull request page on Stash in your browser	
+Start typing `stash` in Alfred and you will be guided by a menu.
 
-## Configuration ##
-
-You have to configure the parameters for connecting to your Stash instance. Use the following commands:
-
-- `stash config host [host_url]` — Configure the URL to your Stash host
-- `stash config user [user_name]` — Configure the name of your Stash user
-- `stash config password [password]` — Configure the password of your Stash user (will be stored encrypted in Keychain)
-- `stash config verifycert [true|false]` — Enable/disable certificate verification for your connection to Stash (if you use a self-signed certificate, you might want to disable this)
-
-If you want to verify if your connection parameters are valid, use the following command:
-
-- `stash config check` — Verifies if a connection to Stash can be established by using the entered connection parameters
-
-Further configuration commands:
-
-- `stash config delcache` — Deletes the cached Stash infos
+Please note that you can `CMD+C` a repository entry to get its clone URL.
 
 
 ## Icons ##
@@ -62,6 +45,9 @@ After a repository name you might sometimes see the following icons:
 ## Credits ##
 
 Thanks to [Dean Jackson][deanishe] for building the awesome Python library [Alfred Workflow][alfred-workflow].
+Also thanks to Ian Paterson for the awesome [Wunderlist Alfred workflow][wunderlist] which is one of the nicest 
+menu-based Alfred workflows we’ve seen so far and which has inspired our workflow deeply.
+Also thanks to Google for their nice [material design icons][google-material-design].
 
 
 ## License ##

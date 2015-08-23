@@ -8,6 +8,7 @@ from src.util import workflow
 FORK = u'⑂'
 PUBLIC = u'🔓'
 
+
 class RepositoryFilterableMenu(StashFilterableMenu):
     def __init__(self, args):
         super(RepositoryFilterableMenu, self).__init__(entity_name='repositories',

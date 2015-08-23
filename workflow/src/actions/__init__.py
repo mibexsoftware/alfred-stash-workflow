@@ -16,11 +16,11 @@ from src.util import workflow
 HELP_URL = 'https://github.com/mibexsoftware/alfred-stash-workflow/issues'
 
 # How often to check for new / updated Stash data
-UPDATE_INTERVAL_PROJECTS = 8 * 60 * 60  # eight hours
+UPDATE_INTERVAL_PROJECTS = 1 * 24 * 60 * 60  # every day
 UPDATE_INTERVAL_REPOS = 4 * 60 * 60  # four hours
-UPDATE_INTERVALL_MY_PULL_REQUESTS = 15 * 60  # 15 minutes
-UPDATE_INTERVALL_CREATED_PULL_REQUESTS = 15 * 60  # 15 minutes
-UPDATE_INTERVALL_OPEN_PULL_REQUESTS = 30 * 60  # 30 minutes
+UPDATE_INTERVAL_MY_PULL_REQUESTS = 15 * 60  # 15 minutes
+UPDATE_INTERVAL_CREATED_PULL_REQUESTS = 15 * 60  # 15 minutes
+UPDATE_INTERVAL_OPEN_PULL_REQUESTS = 1 * 60 * 60  # every hour
 
 PROJECT_AVATAR_DIR = 'project_avatars'
 
@@ -77,11 +77,6 @@ def _notify_if_cache_update_in_progress():
         workflow().add_item('Getting data from Stash. List will be up-to-date in a second or two...',
                             valid=False,
                             icon=ICON_INFO)
-
-
-def _update_stash_cache():
-    cmd = ['/usr/bin/python', '-msrc.actions.update']
-    run_in_background(u'update', cmd)
 
 
 def create_workflow():
