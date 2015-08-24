@@ -87,7 +87,13 @@ class StashWorkflowAction(object):
 def get_data_from_cache(cache_key, update_interval):
     # Set `data_func` to None, as we don't want to update the cache in this script and `max_age` to 0
     # because we want the cached data regardless of age
-    data = workflow().cached_data(cache_key, None, max_age=0)
+    try:
+        data = workflow().cached_data(cache_key, None, max_age=0)
+    except Exception:
+        # this might happen when there are incompatible model changes and the pickle cache cannot be deserialzed
+        # anymore => in this case it is better to clear the cache and to re-trigger data syncing
+        workflow().clear_cache()
+        data = []
 
     # Start update script if cached data is too old (or doesn't exist)
     if not workflow().cached_data_fresh(cache_key, max_age=update_interval):
