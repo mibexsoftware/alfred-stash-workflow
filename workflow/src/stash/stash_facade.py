@@ -89,6 +89,7 @@ class StashFacade(object):
             'stream': stream
         }
         response = requests.get(url, params=params, **options)
+        response.raise_for_status()
         return response
 
     def _page(self, url, params):
@@ -100,7 +101,6 @@ class StashFacade(object):
                 params['start'] = start
 
             response = self._get(url, params)
-            response.raise_for_status()
             json = response.json()
 
             if 'values' not in json:
