@@ -70,3 +70,4 @@ This workflow, excluding the Atlassian Stash logo, is released under the [MIT Li
 [packal-page]: http://www.packal.org/workflow/atlassian-stash-workflow
 [screencast]: https://raw.githubusercontent.com/mibexsoftware/alfred-stash-workflow/master/screencast.gif
 [alfred-workflow-installation]: http://support.alfredapp.com/workflows:installing/
+[google-material-design]: https://github.com/google/material-design-icons
