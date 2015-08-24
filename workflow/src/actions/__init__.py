@@ -4,7 +4,6 @@ from src import icons
 from src.lib.workflow import (PasswordNotFound)
 from src.lib.workflow.background import run_in_background
 from src.lib.workflow.background import is_running
-from src.lib.workflow import ICON_INFO
 from src.lib.requests.exceptions import SSLError
 
 from src.stash.stash_facade import StashFacade
