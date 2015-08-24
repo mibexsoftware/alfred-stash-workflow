@@ -5,7 +5,7 @@
 [![License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](http://mibexsoftware.mit-license.org/2015)
 
 
-Alfred workflow to search for projects, repositories and pull requests to review in [Atlassian Stash][stash].
+Alfred workflow to search for projects, repositories and pull requests in [Atlassian Stash][stash].
 
 
 ![][screencast]
@@ -61,6 +61,7 @@ This workflow, excluding the Atlassian Stash logo, is released under the [MIT Li
 
 
 [stash]: http://www.atlassian.com/stash
+[wunderlist]: https://github.com/idpaterson/alfred-wunderlist-workflow
 [mibexlogo]: https://www.mibexsoftware.com/wp-content/uploads/2015/06/mibex.png
 [deanishe]: hhttps://github.com/deanishe
 [mit]: http://opensource.org/licenses/MIT
