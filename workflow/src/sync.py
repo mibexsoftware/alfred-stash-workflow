@@ -7,6 +7,7 @@ from src.actions import PROJECTS_CACHE_KEY, \
     UPDATE_INTERVAL_PROJECTS, build_stash_facade, PROJECT_AVATAR_DIR, UPDATE_INTERVAL_REPOS, REPOS_CACHE_KEY, \
     PULL_REQUESTS_REVIEW_CACHE_KEY, UPDATE_INTERVAL_MY_PULL_REQUESTS, PULL_REQUESTS_CREATED_CACHE_KEY, \
     PULL_REQUESTS_OPEN_CACHE_KEY, UPDATE_INTERVAL_OPEN_PULL_REQUESTS
+from src.lib.requests import HTTPError
 from src.util import workflow
 
 
@@ -42,10 +43,13 @@ def _find_all_repositories(stash_facade):
 def _fetch_user_avatars(repositories, stash_facade):
     user_repos = set(filter(lambda r: r.project_key.startswith('~'), repositories))
     for r in user_repos:
-        avatar = stash_facade.fetch_user_avatar(r.project_key[1:])
-        if avatar is not None:
-            with open(workflow().cachefile('{}/{}'.format(PROJECT_AVATAR_DIR, r.project_key)), 'wb') as avatar_file:
-                shutil.copyfileobj(avatar, avatar_file)
+        try:
+            avatar = stash_facade.fetch_user_avatar(r.project_key[1:])
+            if avatar is not None:
+                with open(workflow().cachefile('{}/{}'.format(PROJECT_AVATAR_DIR, r.project_key)), 'wb') as avatar_file:
+                    shutil.copyfileobj(avatar, avatar_file)
+        except HTTPError:
+            pass  # ignore as not every Stash user might have an avatar configured
 
 
 def _find_all_projects(stash_facade):
