@@ -111,38 +111,28 @@ class StashFilterableMenu(object):
     def run(self):
         workflow().logger.debug('workflow args: {}'.format(self.args))
 
-        data = get_data_from_cache(self.cache_key, self.update_interval)
-        entities = self._transform_from_cache(data, self._get_query())
         _notify_if_cache_update_in_progress()
+        data = get_data_from_cache(self.cache_key, self.update_interval)
+        query = self.args[-1]
 
-        query = self._get_sub_query()
         # query may not be empty or contain only whitespace. This will raise a ValueError.
-        if query and entities:
-            entities = workflow().filter(query, entities, key=self._get_result_filter(), min_score=SEARCH_MIN_SCORE)
-            workflow().logger.debug('{} {} matching `{}`'.format(self.entity_name, len(entities), self._get_query()))
+        if query and data:
+            data = workflow().filter(query, data, key=self._get_result_filter(), min_score=SEARCH_MIN_SCORE)
+            workflow().logger.debug('{} {} matching `{}`'.format(self.entity_name, len(data), query))
 
-        if not entities:
+        if not data:
             # only do a REST call in case there is no query given because only in that case it is likely that there
             # is a problem with the connection to Stash and we would like to prevent doing slow calls in here
             if query or (not query and try_stash_connection(show_success=False)):
                 workflow().add_item('No matching {} found.'.format(self.entity_name), icon=icons.ERROR)
         else:
-            for e in entities:
+            for e in data:
                 self._add_to_result_list(e)
 
         self._add_item_after_last_result()
 
     def _get_result_filter(self):
         raise NotImplementedError
-
-    def _transform_from_cache(self, entities, query):
-        return entities
-
-    def _get_query(self):
-        return self.args[-1]
-
-    def _get_sub_query(self):
-        return self.args[-1]
 
     def _add_to_result_list(self, entity):
         raise NotImplementedError
