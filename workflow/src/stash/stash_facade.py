@@ -51,7 +51,11 @@ class StashFacade(object):
         response = self._get(self._stash_url('/users/{}'.format(user_slug.lower())), params={'avatarSize': 64}).json()
         if 'avatarUrl' not in response:
             return None
-        response = self._get(response['avatarUrl'], params={}, stream=True)
+        if response['avatarUrl'].startswith(('https://', 'http://')):  # external gravatar
+            avatar_url = response['avatarUrl']
+        else:  # internal Stash avatar
+            avatar_url = '{}/users/{}/avatar.png?s=64'.format(self._base_url, user_slug.lower())
+        response = self._get(avatar_url, params={}, stream=True)
         response.raw.decode_content = True
         return response.raw
 
