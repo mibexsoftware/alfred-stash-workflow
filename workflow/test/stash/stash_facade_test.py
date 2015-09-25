@@ -732,7 +732,7 @@ class TestStashFacade(TestCase):
                                                     "links": {
                                                         "clone": [
                                                             {
-                                                                "href": "https://<baseURL>/scm/PRJ/my-repo.git",
+                                                                "href": "https://<baseURL>/scm/PRJ/my-repo1.git",
                                                                 "name": "http"
                                                             },
                                                             {
@@ -821,7 +821,7 @@ class TestStashFacade(TestCase):
                                                     "links": {
                                                         "clone": [
                                                             {
-                                                                "href": "https://<baseURL>/scm/PRJ/my-repo.git",
+                                                                "href": "https://<baseURL>/scm/PRJ/my-repo2.git",
                                                                 "name": "http"
                                                             },
                                                             {
