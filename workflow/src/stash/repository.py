@@ -23,7 +23,7 @@ class Repository(EqualityMixin):
                          json['project']['name'],
                          json['public'],
                          'origin' in json,
-                         json['cloneUrl'])
+                         json['links']['clone'][0]['href'])
         return repository
 
     def __str__(self):
