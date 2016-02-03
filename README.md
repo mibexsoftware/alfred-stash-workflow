@@ -1,11 +1,11 @@
-# Alfred Workflow for Atlassian Stash #
+# Alfred Workflow for Atlassian Bitbucket Server (Stash) #
 
 [![Build Status](http://img.shields.io/travis/mibexsoftware/alfred-stash-workflow.svg?style=flat-square)](https://travis-ci.org/mibexsoftware/alfred-stash-workflow)
 [![Latest Version](http://img.shields.io/github/release/mibexsoftware/alfred-stash-workflow.svg?style=flat-square)](https://github.com/mibexsoftware/alfred-stash-workflow/releases)
 [![License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](http://mibexsoftware.mit-license.org/2015)
 
 
-Alfred workflow to search for projects, repositories and pull requests in [Atlassian Stash][stash].
+Alfred workflow to search for projects, repositories and pull requests in [Atlassian Bitbucket Server (Stash)][stash].
 
 
 ![][screencast]
