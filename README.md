@@ -13,16 +13,16 @@ Alfred workflow to search for projects, repositories and pull requests in [Atlas
 
 ## Download ##
 
-Get this Stash workflow for Alfred from [GitHub][gh-releases] or [Packal][packal-page]. See 
+Get this Bitbucket Server (Stash) workflow for Alfred from [GitHub][gh-releases] or [Packal][packal-page]. See 
 this [guide][alfred-workflow-installation] on how to install a workflow in Alfred (basically, you 
 just have to open the file by double-clicking on it).
 
 
 ## Configuration ##
 
-You have to configure the parameters for connecting to your Stash instance. Use the following command:
+You have to configure the parameters for connecting to your Bitbucket Server (Stash) instance. Use the following command:
 
-- `stash:config` — Configure the Stash host URL, and if necessary, a username and password
+- `stash:config` — Configure the Bitbucket Server (Stash) host URL, and if necessary, a username and password
 
 
 ## Usage ##
@@ -52,7 +52,7 @@ Also thanks to Google for their nice [material design icons][google-material-des
 
 ## License ##
 
-This workflow, excluding the Atlassian Stash logo, is released under the [MIT Licence][mit].
+This workflow, excluding the Atlassian Bitbucket Server (Stash) logo, is released under the [MIT Licence][mit].
 
 
 ## Author
