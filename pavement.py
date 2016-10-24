@@ -85,7 +85,7 @@ def coverage():
 def install_libs():
     """Install shipped workflow libs."""
     sh("pip install --target=workflow/src/lib requests==2.7.0")
-    sh("pip install --target=workflow/src/lib Alfred-Workflow==1.13")
+    sh("pip install --target=workflow/src/lib Alfred-Workflow==1.22")
 
 
 @task
