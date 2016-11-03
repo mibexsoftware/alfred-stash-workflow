@@ -78,6 +78,11 @@ class ConfigureWorkflowAction(StashWorkflowAction):
                 'Updates the workflow to the latest version (will be checked automatically periodically).',
                 arg=':config update', valid=True, icon=icons.UPDATE
             )
+            workflow().add_item(
+                'Switch theme',
+                'Toggle between light and dark icons',
+                arg=':config switchtheme', valid=True, icon=icons.SWITCH_THEME
+            )
             workflow().add_item('Main menu', autocomplete='', icon=icons.GO_BACK)
 
     def execute(self, args, cmd_pressed, shift_pressed):
@@ -107,6 +112,10 @@ class ConfigureWorkflowAction(StashWorkflowAction):
                     print('You already have the latest workflow version')
             except Exception, e:
                 print('Update of workflow failed: {}'.format(str(e)))
+        elif 'switchtheme' in args:
+            icon_theme = 'light' if icons.icon_theme() == 'dark' else 'dark'
+            workflow().settings[icons.ICON_THEME] = icon_theme
+            print('The workflow is now using the %s icon theme' % icon_theme)
 
         call_alfred('stash:config')
 

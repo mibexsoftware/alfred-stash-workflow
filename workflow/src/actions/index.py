@@ -19,8 +19,8 @@ class IndexWorkflowAction(StashWorkflowAction):
             icon=icons.REPOSITORIES
         )
         workflow().add_item(
-            'Search for pull requests',
-            'Search for pull requests and open them in your default browser',
+            'Search or raise pull requests',
+            "Search for pull requests or raise new ones based on Stash's suggestions",
             autocomplete=':pullrequests ',
             icon=icons.PULL_REQUESTS
         )
