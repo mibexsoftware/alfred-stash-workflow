@@ -6,7 +6,7 @@
 .DS_Store
 venv
 setup.py
-Alfred_Workflow*.egg-info
+Alfred_*.egg-info
 bootstrap.py
 coverage.xml
 paver-minilib.zip
