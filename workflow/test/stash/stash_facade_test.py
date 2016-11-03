@@ -106,7 +106,7 @@ class TestStashFacade(TestCase):
         )
 
     def _mock_pull_requests_rest_call(self):
-        httpretty.register_uri(httpretty.GET, "http://localhost:7990/stash/rest/inbox/1.0/pull-requests",
+        httpretty.register_uri(httpretty.GET, "http://localhost:7990/stash/rest/api/1.0/inbox/pull-requests",
                                body='''{
                                           "size": 1,
                                           "limit": 25,

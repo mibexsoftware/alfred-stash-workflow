@@ -24,7 +24,7 @@ class StashFacade(object):
         else:
             self._base_url = stash_host
         self._stash_api_base = '{}/rest/api/{}'.format(self._base_url, self.STASH_API_VERSION)
-        self._inbox_plugin_api_base = '{}/rest/inbox/{}'.format(self._base_url, self.INBOX_PLUGIN_API_VERSION)
+        self._inbox_plugin_api_base = '{}/rest/api/{}/inbox'.format(self._base_url, self.INBOX_PLUGIN_API_VERSION)
 
     def all_projects(self):
         return [Project.from_json(json)
