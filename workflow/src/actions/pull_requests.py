@@ -2,7 +2,8 @@
 from src import icons
 from src.actions import StashWorkflowAction, StashFilterableMenu, PROJECT_AVATAR_DIR, PULL_REQUESTS_OPEN_CACHE_KEY, \
     UPDATE_INTERVAL_OPEN_PULL_REQUESTS, UPDATE_INTERVAL_MY_PULL_REQUESTS, UPDATE_INTERVAL_CREATED_PULL_REQUESTS, \
-    PULL_REQUESTS_REVIEW_CACHE_KEY, PULL_REQUESTS_CREATED_CACHE_KEY, get_data_from_cache
+    PULL_REQUESTS_REVIEW_CACHE_KEY, PULL_REQUESTS_CREATED_CACHE_KEY, PULL_REQUEST_SUGGESTIONS_CACHE_KEY, \
+    UPDATE_INTERVAL_PULL_REQUEST_SUGGESTIONS, get_data_from_cache
 from src.util import workflow, call_alfred
 
 
@@ -14,8 +15,7 @@ class PullRequestFilterableMenu(StashFilterableMenu):
                                                         args=args)
 
     def _add_to_result_list(self, pull_request):
-        workflow().add_item(title=u'{} #{}: {} → {}'.format(pull_request.repo_name, pull_request.pull_request_id,
-                                                            pull_request.from_branch, pull_request.to_branch),
+        workflow().add_item(title=unicode(pull_request),
                             subtitle=pull_request.title,
                             arg=':pullrequests ' + pull_request.link,
                             largetext=pull_request.title,
@@ -60,7 +60,8 @@ _counters = {
 _pull_request_modes = {
     'open':    (PULL_REQUESTS_OPEN_CACHE_KEY, UPDATE_INTERVAL_OPEN_PULL_REQUESTS),
     'review':  (PULL_REQUESTS_REVIEW_CACHE_KEY, UPDATE_INTERVAL_MY_PULL_REQUESTS),
-    'created': (PULL_REQUESTS_CREATED_CACHE_KEY, UPDATE_INTERVAL_CREATED_PULL_REQUESTS)
+    'created': (PULL_REQUESTS_CREATED_CACHE_KEY, UPDATE_INTERVAL_CREATED_PULL_REQUESTS),
+    'suggestions': (PULL_REQUEST_SUGGESTIONS_CACHE_KEY, UPDATE_INTERVAL_PULL_REQUEST_SUGGESTIONS)
 }
 
 
@@ -73,6 +74,13 @@ def _num_pull_requests(mode):
 class PullRequestWorkflowAction(StashWorkflowAction):
     def menu(self, args):
         if len(args) == 2:
+            workflow().add_item(
+                u'Suggested pull requests {}'.format(_num_pull_requests('suggestions')),
+                'Suggested pull requests to raise based on your recent commits',
+                arg=':pullrequests suggestions',
+                icon=icons.PR_SUGGESTIONS,
+                valid=True
+            )
             workflow().add_item(
                 u'All open pull requests {}'.format(_num_pull_requests('open')),
                 'Search in all open pull requests',

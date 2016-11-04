@@ -2,9 +2,11 @@
 
 from unittest import TestCase
 
+import freezegun
 import httpretty
 from src.stash.project import Project
 from src.stash.pull_request import PullRequest
+from src.stash.pull_request_suggestion import PullRequestSuggestion
 from src.stash.repository import Repository
 from src.stash.stash_facade import StashFacade
 
@@ -104,6 +106,103 @@ class TestStashFacade(TestCase):
                          project_key='PROJECT_1')],
             pull_requests
         )
+
+    @httpretty.activate
+    def test_pull_request_suggestions(self):
+        # GIVEN
+        self._mock_pull_request_suggestions_rest_call()
+        # WHEN
+        suggestions = self.stash_facade.my_pull_request_suggestions()
+        # THEN
+        self.assertEquals(
+            PullRequestSuggestion(change_time=1478187004000,
+                                  repo_slug='alfred-stash-workflow',
+                                  repo_name='Alfred Stash Workflow',
+                                  project_name='Mira',
+                                  project_key='MIRA',
+                                  project_url='https://localhost:7990/bitbucket/projects/MIRA',
+                                  ref_id='refs/heads/master',
+                                  display_id='master'),
+            suggestions[0]
+        )
+
+    def _mock_pull_request_suggestions_rest_call(self):
+        httpretty.register_uri(httpretty.GET, "http://localhost:7990/stash/rest/api/1.0/dashboard/pull-request-suggestions",
+                               body='''{
+                                          "size": 1,
+                                          "limit": 3,
+                                          "isLastPage": true,
+                                          "values": [
+                                            {
+                                              "changeTime": 1478187004000,
+                                              "refChange": {
+                                                "ref": {
+                                                  "id": "refs/heads/master",
+                                                  "displayId": "master",
+                                                  "type": "BRANCH"
+                                                },
+                                                "refId": "refs/heads/master",
+                                                "fromHash": "f9431d41a78f766138220f73a3b50286766df770",
+                                                "toHash": "41bf84305faa3a5882f1eeb19a3298098f574bf9",
+                                                "type": "UPDATE"
+                                              },
+                                              "repository": {
+                                                "slug": "alfred-stash-workflow",
+                                                "id": 352,
+                                                "name": "Alfred Stash Workflow",
+                                                "scmId": "git",
+                                                "state": "AVAILABLE",
+                                                "statusMessage": "Available",
+                                                "forkable": false,
+                                                "project": {
+                                                  "key": "MIRA",
+                                                  "id": 41,
+                                                  "name": "Mira",
+                                                  "description": "Our phantastic Atlassian plug-ins",
+                                                  "public": false,
+                                                  "type": "NORMAL",
+                                                  "links": {
+                                                    "self": [
+                                                      {
+                                                        "href": "https://localhost:7990/bitbucket/projects/MIRA"
+                                                      }
+                                                    ]
+                                                  }
+                                                },
+                                                "public": false,
+                                                "links": {
+                                                  "clone": [
+                                                    {
+                                                      "href": "https://mrueegg@localhost:7990/bitbucket/scm/mira/alfred-stash-workflow.git",
+                                                      "name": "http"
+                                                    },
+                                                    {
+                                                      "href": "ssh://git@localhost:8442/mira/alfred-stash-workflow.git",
+                                                      "name": "ssh"
+                                                    }
+                                                  ],
+                                                  "self": [
+                                                    {
+                                                      "href": "https://localhost:7990/bitbucket/projects/MIRA/repos/alfred-stash-workflow/browse"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "fromRef": {
+                                                "id": "refs/heads/master",
+                                                "displayId": "master",
+                                                "type": "BRANCH"
+                                              },
+                                              "toRef": {
+                                                "id": "refs/heads/master",
+                                                "displayId": "master",
+                                                "type": "BRANCH"
+                                              }
+                                            }
+                                          ],
+                                          "start": 0
+                                        }''',
+                               content_type="application/json")
 
     def _mock_pull_requests_rest_call(self):
         httpretty.register_uri(httpretty.GET, "http://localhost:7990/stash/rest/api/1.0/inbox/pull-requests",

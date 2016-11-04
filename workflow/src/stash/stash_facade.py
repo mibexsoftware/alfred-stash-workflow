@@ -7,6 +7,7 @@ from src.lib import requests
 # see http://www.deanishe.net/alfred-workflow/api/web.html
 from src.stash.project import Project
 from src.stash.pull_request import PullRequest
+from src.stash.pull_request_suggestion import PullRequestSuggestion
 from src.stash.repository import Repository
 
 
@@ -42,12 +43,12 @@ class StashFacade(object):
                                                                                                      repo.slug),
                                        params={'limit': 100})]
 
-    def fetch_project_avatar(self, project_key):
+    def project_avatar(self, project_key):
         response = self._get(self._stash_url('/projects/{}/avatar.png'.format(project_key)), params={}, stream=True)
         response.raw.decode_content = True
         return response.raw
 
-    def fetch_user_avatar(self, user_slug):
+    def user_avatar(self, user_slug):
         response = self._get(self._stash_url('/users/{}'.format(user_slug.lower())), params={'avatarSize': 64}).json()
         if 'avatarUrl' not in response:
             return None
@@ -62,6 +63,11 @@ class StashFacade(object):
     def my_pull_requests_to_review(self):
         return [PullRequest.from_json(json)
                 for json in self._page(self._inbox_plugin_url('/pull-requests'), params={'limit': 100})]
+
+    def my_pull_request_suggestions(self):
+        #/rest/api/1.0/projects/{projectKey}/repos/{repositorySlug}/compare/commits
+        return [PullRequestSuggestion.from_json(json)
+                for json in self._page(self._stash_url('/dashboard/pull-request-suggestions'), params={'limit': 25})]
 
     def my_created_pull_requests(self):
         return [PullRequest.from_json(json)

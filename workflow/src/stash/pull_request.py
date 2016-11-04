@@ -25,7 +25,7 @@ class PullRequest(EqualityMixin):
         return pull_request
 
     def __str__(self):
-        return ('PullRequest(pull_request_id="{}", from_branch="{}", to_branch="{}", title="{}", '
-                'link="{}", project_key="{}", repo_name="{}")'
-                .format(self.pull_request_id, self.from_branch, self.to_branch, self.title,
-                        self.link, self.project_key, self.repo_name))
+        return unicode(self).encode('utf-8')
+
+    def __unicode__(self):
+        return u'{} #{}: {} → {}'.format(self.repo_name, self.pull_request_id, self.from_branch, self.to_branch)
