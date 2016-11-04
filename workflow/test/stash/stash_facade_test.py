@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
-
+from distutils.version import StrictVersion
 from unittest import TestCase
 
-import freezegun
 import httpretty
 from src.stash.project import Project
 from src.stash.pull_request import PullRequest
@@ -50,7 +49,7 @@ class TestStashFacade(TestCase):
         # GIVEN
         self._mock_pull_requests_rest_call()
         # WHEN
-        pull_requests = self.stash_facade.my_pull_requests_to_review()
+        pull_requests = self.stash_facade.my_pull_requests_to_review(StrictVersion('4.10.0'))
         # THEN
         self.assertEquals(
             [PullRequest(pull_request_id=1,
@@ -68,7 +67,7 @@ class TestStashFacade(TestCase):
         # GIVEN
         self._mock_pull_requests_rest_call()
         # WHEN
-        pull_requests = self.stash_facade.my_created_pull_requests()
+        pull_requests = self.stash_facade.my_created_pull_requests(StrictVersion('4.10.0'))
         # THEN
         self.assertEquals(
             [PullRequest(pull_request_id=1,
@@ -112,7 +111,7 @@ class TestStashFacade(TestCase):
         # GIVEN
         self._mock_pull_request_suggestions_rest_call()
         # WHEN
-        suggestions = self.stash_facade.my_pull_request_suggestions()
+        suggestions = self.stash_facade.my_pull_request_suggestions(StrictVersion('4.10.0'))
         # THEN
         self.assertEquals(
             PullRequestSuggestion(change_time=1478187004000,
