@@ -5,6 +5,8 @@ from src.lib import requests
 
 # We use requests library for HTTP connections because workflow.web does not verify SSL certificates!
 # see http://www.deanishe.net/alfred-workflow/api/web.html
+from distutils.version import StrictVersion
+
 from src.stash.project import Project
 from src.stash.pull_request import PullRequest
 from src.stash.pull_request_suggestion import PullRequestSuggestion
@@ -25,7 +27,12 @@ class StashFacade(object):
         else:
             self._base_url = stash_host
         self._stash_api_base = '{}/rest/api/{}'.format(self._base_url, self.STASH_API_VERSION)
-        self._inbox_plugin_api_base = '{}/rest/api/{}/inbox'.format(self._base_url, self.INBOX_PLUGIN_API_VERSION)
+        self._stash_inbox_plugin_api_base = '{}/rest/inbox/{}'.format(self._base_url, self.INBOX_PLUGIN_API_VERSION)
+        self._bbs_inbox_plugin_api_base = '{}/rest/api/{}/inbox'.format(self._base_url, self.INBOX_PLUGIN_API_VERSION)
+
+    def application_version(self):
+        response = self._get(self._stash_url('/application-properties'), params={}).json()
+        return StrictVersion(response['version'])
 
     def all_projects(self):
         return [Project.from_json(json)
@@ -60,19 +67,21 @@ class StashFacade(object):
         response.raw.decode_content = True
         return response.raw
 
-    def my_pull_requests_to_review(self):
+    def my_pull_requests_to_review(self, appl_version):
         return [PullRequest.from_json(json)
-                for json in self._page(self._inbox_plugin_url('/pull-requests'), params={'limit': 100})]
+                for json in self._page(self._inbox_plugin_url('/pull-requests', appl_version), params={'limit': 100})]
 
-    def my_pull_request_suggestions(self):
-        #/rest/api/1.0/projects/{projectKey}/repos/{repositorySlug}/compare/commits
+    def my_pull_request_suggestions(self, appl_version):
+        # before BBS 4.10, pull request suggestions API was not supported
+        if appl_version < StrictVersion('4.10.0'):
+            return []
         return [PullRequestSuggestion.from_json(json)
                 for json in self._page(self._stash_url('/dashboard/pull-request-suggestions'), params={'limit': 25})]
 
-    def my_created_pull_requests(self):
+    def my_created_pull_requests(self, appl_version):
         return [PullRequest.from_json(json)
-                for json in self._page(self._inbox_plugin_url('/pull-requests'), params={'role': 'author',
-                                                                                         'limit': 100})]
+                for json in self._page(self._inbox_plugin_url('/pull-requests', appl_version), params={'role': 'author',
+                                                                                                       'limit': 100})]
 
     def verify_stash_connection(self):
         self._get(self._stash_url('/repos'), params={'size': 1})
@@ -80,8 +89,10 @@ class StashFacade(object):
     def _stash_url(self, resource_path):
         return self._url(self._stash_api_base, resource_path)
 
-    def _inbox_plugin_url(self, resource_path):
-        return self._url(self._inbox_plugin_api_base, resource_path)
+    def _inbox_plugin_url(self, resource_path, appl_version):
+        inbox_base_url = self._stash_inbox_plugin_api_base if appl_version < StrictVersion('4.0.0') \
+            else self._bbs_inbox_plugin_api_base
+        return self._url(inbox_base_url, resource_path)
 
     def _url(self, api_base, resource_path):
         if not resource_path.startswith("/"):

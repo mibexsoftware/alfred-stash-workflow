@@ -13,6 +13,7 @@ from src.stash.stash_facade import StashFacade
 from src.util import workflow
 
 # How often to check for new / updated Stash data
+UPDATE_INTERVAL_APPL_VERSION = 7 * 24 * 60 * 60  # every week
 UPDATE_INTERVAL_PROJECTS = 1 * 24 * 60 * 60  # every day
 UPDATE_INTERVAL_REPOS = 4 * 60 * 60  # four hours
 UPDATE_INTERVAL_MY_PULL_REQUESTS = 15 * 60  # 15 minutes
@@ -32,6 +33,7 @@ USER_NAME = 'user_name'
 USER_PW = 'user_pw'
 VERIFY_CERT = 'verify_cert'
 
+APPL_VERSION_CACHE_KEY = 'appl_version'
 PROJECTS_CACHE_KEY = 'projects'
 REPOS_CACHE_KEY = 'repos'
 PULL_REQUESTS_REVIEW_CACHE_KEY = 'pullrequests'

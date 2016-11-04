@@ -7,21 +7,21 @@ from src.actions import PROJECTS_CACHE_KEY, \
     UPDATE_INTERVAL_PROJECTS, build_stash_facade, PROJECT_AVATAR_DIR, UPDATE_INTERVAL_REPOS, REPOS_CACHE_KEY, \
     PULL_REQUESTS_REVIEW_CACHE_KEY, UPDATE_INTERVAL_MY_PULL_REQUESTS, PULL_REQUESTS_CREATED_CACHE_KEY, \
     PULL_REQUESTS_OPEN_CACHE_KEY, UPDATE_INTERVAL_OPEN_PULL_REQUESTS, PULL_REQUEST_SUGGESTIONS_CACHE_KEY, \
-    UPDATE_INTERVAL_PULL_REQUEST_SUGGESTIONS
+    UPDATE_INTERVAL_PULL_REQUEST_SUGGESTIONS, APPL_VERSION_CACHE_KEY, UPDATE_INTERVAL_APPL_VERSION
 from src.lib.requests import HTTPError
 from src.util import workflow
 
 
-def _my_pull_requests_to_review(stash_facade):
+def _my_pull_requests_to_review(stash_facade, appl_version):
     workflow().logger.debug('Starting to fetch pull requests to review...')
-    pull_requests = stash_facade.my_pull_requests_to_review()
+    pull_requests = stash_facade.my_pull_requests_to_review(appl_version)
     workflow().logger.debug('Found {} pull requests to review'.format(len(pull_requests)))
     return pull_requests
 
 
-def _my_created_pull_requests(stash_facade):
+def _my_created_pull_requests(stash_facade, appl_version):
     workflow().logger.debug('Starting to fetch created pull requests...')
-    pull_requests = stash_facade.my_created_pull_requests()
+    pull_requests = stash_facade.my_created_pull_requests(appl_version)
     workflow().logger.debug('Found {} created pull requests'.format(len(pull_requests)))
     return pull_requests
 
@@ -33,11 +33,18 @@ def _open_pull_requests(stash_facade):
     return pull_requests
 
 
-def _my_pull_request_suggestions(stash_facade):
+def _my_pull_request_suggestions(stash_facade, appl_version):
     workflow().logger.debug('Starting to fetch pull request suggestions...')
-    pull_request_suggestions = stash_facade.my_pull_request_suggestions()
+    pull_request_suggestions = stash_facade.my_pull_request_suggestions(appl_version)
     workflow().logger.debug('Found {} pull request suggestions'.format(len(pull_request_suggestions)))
     return pull_request_suggestions
+
+
+def _get_appl_version(stash_facade):
+    workflow().logger.debug('Starting to get application version...')
+    appl_version = stash_facade.application_version()
+    workflow().logger.debug('Detected application version: {}.'.format(appl_version))
+    return appl_version
 
 
 def _find_all_repositories(stash_facade):
@@ -74,50 +81,38 @@ def _find_all_projects(stash_facade):
 
 
 def _fetch_stash_data_if_necessary(stash_facade):
-    # cached_data can only take a bare callable (no args),
-    # so we need to wrap callables needing arguments in a function
-    # that needs none.
-    def wrapper_projects():
-        return _find_all_projects(stash_facade)
+    appl_version = workflow().cached_data(APPL_VERSION_CACHE_KEY,
+                                          lambda: _get_appl_version(stash_facade),
+                                          max_age=UPDATE_INTERVAL_APPL_VERSION)
+    workflow().logger.debug('application version cached')
 
-    projects = workflow().cached_data(PROJECTS_CACHE_KEY, wrapper_projects, max_age=UPDATE_INTERVAL_PROJECTS)
+    projects = workflow().cached_data(PROJECTS_CACHE_KEY,
+                                      lambda: _find_all_projects(stash_facade),
+                                      max_age=UPDATE_INTERVAL_PROJECTS)
     workflow().logger.debug('{} projects cached'.format(len(projects)))
 
-    def wrapper_repositories():
-        return _find_all_repositories(stash_facade)
-
-    repos = workflow().cached_data(REPOS_CACHE_KEY, wrapper_repositories, max_age=UPDATE_INTERVAL_REPOS)
+    repos = workflow().cached_data(REPOS_CACHE_KEY,
+                                   lambda: _find_all_repositories(stash_facade),
+                                   max_age=UPDATE_INTERVAL_REPOS)
     workflow().logger.debug('{} repositories cached'.format(len(repos)))
 
-    def wrapper_pull_request_suggestions():
-        return _my_pull_request_suggestions(stash_facade)
-
     pull_request_suggestions = workflow().cached_data(PULL_REQUEST_SUGGESTIONS_CACHE_KEY,
-                                                      wrapper_pull_request_suggestions,
+                                                      lambda: _my_pull_request_suggestions(stash_facade, appl_version),
                                                       max_age=UPDATE_INTERVAL_PULL_REQUEST_SUGGESTIONS)
     workflow().logger.debug('{} pull requests to review cached'.format(len(pull_request_suggestions)))
 
-    def wrapper_pull_requests_to_review():
-        return _my_pull_requests_to_review(stash_facade)
-
     pull_requests_to_review = workflow().cached_data(PULL_REQUESTS_REVIEW_CACHE_KEY,
-                                                     wrapper_pull_requests_to_review,
+                                                     lambda: _my_pull_requests_to_review(stash_facade, appl_version),
                                                      max_age=UPDATE_INTERVAL_MY_PULL_REQUESTS)
     workflow().logger.debug('{} pull requests to review cached'.format(len(pull_requests_to_review)))
 
-    def wrapper_created_pull_requests():
-        return _my_created_pull_requests(stash_facade)
-
     pull_requests_created = workflow().cached_data(PULL_REQUESTS_CREATED_CACHE_KEY,
-                                                   wrapper_created_pull_requests,
+                                                   lambda: _my_created_pull_requests(stash_facade, appl_version),
                                                    max_age=UPDATE_INTERVAL_MY_PULL_REQUESTS)
     workflow().logger.debug('{} pull requests created cached'.format(len(pull_requests_created)))
 
-    def wrapper_open_pull_requests():
-        return _open_pull_requests(stash_facade)
-
     open_pull_requests = workflow().cached_data(PULL_REQUESTS_OPEN_CACHE_KEY,
-                                                wrapper_open_pull_requests,
+                                                lambda: _open_pull_requests(stash_facade),
                                                 max_age=UPDATE_INTERVAL_OPEN_PULL_REQUESTS)
     workflow().logger.debug('{} open pull requests cached'.format(len(open_pull_requests)))
 
