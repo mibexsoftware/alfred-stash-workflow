@@ -1,11 +1,13 @@
-# Alfred Workflow for Atlassian Stash #
+# Alfred Workflow for Atlassian Stash and Bitbucket Server #
+
+## [Download latest release][latestrelease]
 
 [![Build Status](http://img.shields.io/travis/mibexsoftware/alfred-stash-workflow.svg?style=flat-square)](https://travis-ci.org/mibexsoftware/alfred-stash-workflow)
 [![Latest Version](http://img.shields.io/github/release/mibexsoftware/alfred-stash-workflow.svg?style=flat-square)](https://github.com/mibexsoftware/alfred-stash-workflow/releases)
 [![License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](http://mibexsoftware.mit-license.org/2015)
 
 
-Alfred workflow to search for projects, repositories and pull requests in [Atlassian Stash][stash].
+An [Alfred][alfred] workflow to search for projects, repositories and pull requests in [Atlassian Stash and Bitbucket Server][stash].
 
 
 ![][screencast]
@@ -13,16 +15,16 @@ Alfred workflow to search for projects, repositories and pull requests in [Atlas
 
 ## Download ##
 
-Get this Stash workflow for Alfred from [GitHub][gh-releases] or [Packal][packal-page]. See 
+Get this workflow for Alfred from [GitHub][latestrelease] or [Packal][packal-page]. See 
 this [guide][alfred-workflow-installation] on how to install a workflow in Alfred (basically, you 
-just have to open the file by double-clicking on it).
+just have to open the `*.alfredworkflow` file by double-clicking on it).
 
 
 ## Configuration ##
 
-You have to configure the parameters for connecting to your Stash instance. Use the following command:
+You have to configure the parameters for connecting to your Stash / Bitbucket Server instance. Use the following command:
 
-- `stash:config` — Configure the Stash host URL, and if necessary, a username and password
+- `stash:config` — Configure the host URL, and if necessary, a username and password
 
 
 ## Usage ##
@@ -60,13 +62,14 @@ This workflow, excluding the Atlassian Stash logo, is released under the [MIT Li
 ![https://www.mibexsoftware.com][mibexlogo]
 
 
+[alfred]: https://www.alfredapp.com/
+[latestrelease]: https://github.com/mibexsoftware/alfred-stash-workflow/releases/latest
 [stash]: http://www.atlassian.com/stash
 [wunderlist]: https://github.com/idpaterson/alfred-wunderlist-workflow
 [mibexlogo]: https://www.mibexsoftware.com/wp-content/uploads/2015/06/mibex.png
 [deanishe]: hhttps://github.com/deanishe
 [mit]: http://opensource.org/licenses/MIT
 [alfred-workflow]: hhttps://github.com/deanishe
-[gh-releases]: https://github.com/mibexsoftware/alfred-stash-workflow/releases
 [packal-page]: http://www.packal.org/workflow/atlassian-stash-workflow
 [screencast]: https://raw.githubusercontent.com/mibexsoftware/alfred-stash-workflow/master/screencast.gif
 [alfred-workflow-installation]: http://support.alfredapp.com/workflows:installing/
