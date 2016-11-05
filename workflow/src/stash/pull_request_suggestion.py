@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-
+from datetime import datetime
 from src.stash import EqualityMixin
-from src.util import pretty_timestamp
+from src.util import pretty_date
 
 
 class PullRequestSuggestion(EqualityMixin):
@@ -13,7 +13,7 @@ class PullRequestSuggestion(EqualityMixin):
         self.project_key = project_key
         self.branch = display_id
         self.link = '{}/repos/{}/pull-requests?create&sourceBranch={}'.format(project_url, repo_slug, ref_id)
-        self.title = pretty_timestamp(change_time / 1000)
+        self.title = pretty_date(datetime.fromtimestamp(change_time / 1000))
 
     @classmethod
     def from_json(cls, json):

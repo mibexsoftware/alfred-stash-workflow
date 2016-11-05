@@ -2,6 +2,7 @@
 import subprocess
 from datetime import datetime
 
+import pytz
 from src import HELP_URL, __version__
 from src.lib.workflow import Workflow
 
@@ -31,8 +32,8 @@ def call_alfred(args):
     ])
 
 
-def pretty_timestamp(tstmp, now=datetime.now()):
-    diff = now - datetime.fromtimestamp(tstmp)
+def pretty_date(date, now=datetime.now()):
+    diff = now - date
     second_diff = diff.seconds
     day_diff = diff.days
 
