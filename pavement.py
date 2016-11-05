@@ -22,7 +22,7 @@ options(
         license="MIT"
     ),
     virtualenv=Bunch(
-        packages_to_install=['httpretty', 'wheel', 'virtualenv', 'flake8', 'nose', 'mock', 'coveralls'],
+        packages_to_install=['httpretty', 'wheel', 'virtualenv', 'flake8', 'nose', 'mock', 'coveralls', 'pytz'],
         script_name='bootstrap.py',
         dest_dir='venv'
     )
