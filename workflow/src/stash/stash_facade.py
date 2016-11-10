@@ -90,7 +90,7 @@ class StashFacade(object):
         return self._url(self._stash_api_base, resource_path)
 
     def _inbox_plugin_url(self, resource_path, appl_version):
-        inbox_base_url = self._stash_inbox_plugin_api_base if appl_version < StrictVersion('4.0.0') \
+        inbox_base_url = self._stash_inbox_plugin_api_base if appl_version < StrictVersion('4.5.0') \
             else self._bbs_inbox_plugin_api_base
         return self._url(inbox_base_url, resource_path)
 
