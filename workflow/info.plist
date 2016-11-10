@@ -51,11 +51,11 @@
 	<key>createdby</key>
 	<string>Mibex Software GmbH</string>
 	<key>description</key>
-	<string>Search for repositories and projects and manage your pull requests in Atlassian Stash and Bitbucket Server</string>
+	<string>Search for repositories and projects and manage your pull requests in Atlassian Bitbucket Server</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Atlassian Stash</string>
+	<string>Atlassian Bitbucket Server</string>
 	<key>objects</key>
 	<array>
 		<dict>
