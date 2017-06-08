@@ -1,4 +1,4 @@
-# Alfred Workflow for Atlassian Stash and Bitbucket Server #
+# Alfred Workflow for Atlassian Bitbucket Server #
 
 ## [Download latest release][latestrelease]
 
@@ -22,7 +22,7 @@ just have to open the `*.alfredworkflow` file by double-clicking on it).
 
 ## Configuration ##
 
-You have to configure the parameters for connecting to your Stash / Bitbucket Server instance. Use the following command:
+You have to configure the parameters for connecting to your Bitbucket Server instance. Use the following command:
 
 - `stash:config` — Configure the host URL, and if necessary, a username and password
 
@@ -54,7 +54,7 @@ Also thanks to Google for their nice [material design icons][google-material-des
 
 ## License ##
 
-This workflow, excluding the Atlassian Stash logo, is released under the [MIT Licence][mit].
+This workflow, excluding the Atlassian Bitbucket Server logo, is released under the [MIT Licence][mit].
 
 
 ## Author
