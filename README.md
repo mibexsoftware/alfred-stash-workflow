@@ -7,7 +7,7 @@
 [![License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](http://mibexsoftware.mit-license.org/2015)
 
 
-An [Alfred][alfred] workflow to search for projects, repositories and pull requests in [Atlassian Stash and Bitbucket Server][stash].
+An [Alfred][alfred] workflow to search for projects, repositories and pull requests in [Atlassian Bitbucket Server][stash].
 
 
 ![][screencast]
